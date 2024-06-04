@@ -205,8 +205,139 @@ let books = [
         Pages: 368
       },
 
+      {
+        Title: 'Chronicle of a Death Foretold',
+        Author: 'Gabriel García Márquez',
+        Genre: 'Magical Realism, Mystery',
+        Language: 'Spanish',
+        Price: 45000,
+        Format: 'ebook',
+        ISBN: '9781400034710',
+        Description: 'A gripping exploration of honor, morality, and fate, this novella tells the story of a murder in a small Colombian town and the events leading up to it.',
+        Status: 'New',
+        Location: 'Sena Comercio y Turismo',
+        Publication_Date: '1981',
+        Editorial: 'Vintage Español',
+        Pages: 128
+      },
 
-      
+      {
+        Title: 'The Sound of Things Falling',
+        Author: 'Juan Gabriel Vásquez',
+        Genre: 'Fiction, Historical',
+        Language: 'Spanish',
+        Price: 87000,
+        Format: 'ebook',
+        ISBN: '9781594487484',
+        Description: 'Set in Colombia during the turbulent 1990s, this novel delves into the aftermath of Pablo Escobar\'s reign and its impact on individuals and society, exploring themes of memory, guilt, and redemption.',
+        Status: 'New',
+        Location: 'Sena Comercio y Turismo',
+        Publication_Date: '2011',
+        Editorial: 'Riverhead Books',
+        Pages: 320
+      },
+
+      {
+        Title: 'The Death of Artemio Cruz',
+        Author: 'Carlos Fuentes',
+        Genre: 'Fiction, Political',
+        Language: 'Spanish',
+        Price: 69000,
+        Format: 'ebook',
+        ISBN: '9780374507082',
+        Description: 'A groundbreaking novel that explores the complexities of Mexican society through the life and reflections of Artemio Cruz, a wealthy and powerful man on his deathbed.',
+        Status: 'New',
+        Location: 'Sena Comercio y Turismo',
+        Publication_Date: '1962',
+        Editorial: 'Farrar, Straus and Giroux',
+        Pages: 304
+      },
+
+
+      {
+        Title: 'The House of the Spirits',
+        Author: 'Isabel Allende',
+        Genre: 'Magical Realism, Family Saga',
+        Language: 'Spanish',
+        Price: 38000,
+        Format: 'ebook',
+        ISBN: '978501145923',
+        Description: 'A captivating family saga spanning several generations in Chile, blending magical realism with historical events to explore themes of love, power, and destiny.',
+        Status: 'New',
+        Location: 'Sena Comercio y Turismo',
+        Publication_Date: '1982',
+        Editorial: 'Atria Books',
+        Pages: 496
+      },
+
+      {
+        Title: 'Pedro Páramo',
+        Author: 'Juan Rulfo',
+        Genre: 'Magical Realism, Fiction',
+        Language: 'Spanish',
+        Price: 25000,
+        Format: 'ebook',
+        ISBN: '9788437604185',
+        Description: 'A landmark of Latin American literature, "Pedro Páramo" is a haunting tale that blurs the lines between the living and the dead, exploring themes of memory, loss, and the search for identity.',
+        Status: 'New',
+        Location: 'Sena Comercio y Turismo',
+        Publication_Date: '1955',
+        Editorial: 'Cátedra',
+        Pages: 124
+      },
+
+      {
+        Title: 'The Posthumous Memoirs of Bras Cubas',
+        Author: 'Machado de Assis',
+        Genre: 'Satire, Fiction',
+        Language: 'Portuguese',
+        Price: 55000,
+        Format: 'ebook',
+        ISBN: '9780195101706',
+        Description: 'A groundbreaking work of Brazilian literature, "The Posthumous Memoirs of Bras Cubas" is a satirical novel that explores themes of love, mortality, and social critique through the unconventional narrative of a deceased protagonist.',
+        Status: 'New',
+        Location: 'Sena Comercio y Turismo',
+        Publication_Date: '1881',
+        Editorial: 'Oxford University Press',
+        Pages: 256
+      },
+
+
+      {
+        Title: 'Hopscotch',
+        Author: 'Julio Cortázar',
+        Genre: 'Experimental Fiction',
+        Language: 'Spanish',
+        Price: 100000,
+        Format: 'ebook',
+        ISBN: '9780394752846',
+        Description: 'An innovative and unconventional novel that offers multiple reading paths, inviting readers to engage with its non-linear narrative and explore themes of existentialism, identity, and freedom.',
+        Status: 'New',
+        Location: 'Sena Comercio y Turismo',
+        Publication_Date: '1963',
+        Editorial: 'Pantheon Books',
+        Pages: 576
+      },
+
+
+      {
+        Title: 'The Aleph',
+        Author: 'Jorge Luis Borges',
+        Genre: 'Short Stories, Metafiction',
+        Language: 'Spanish',
+        Price: 30000,
+        Format: 'ebook',
+        ISBN: '9780142437889',
+        Description: 'A collection of mesmerizing short stories that blend fantasy, philosophy, and intricate narrative structures, showcasing Borges\' mastery of storytelling and exploration of complex themes.',
+        Status: 'New',
+        Location: 'Sena Comercio y Turismo',
+        Publication_Date: '1949',
+        Editorial: 'Penguin Classics',
+        Pages: 272
+      }
+
+
+
 
   
   ];
