@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --blue: rgb(158, 173, 200);
+    --gray: rgb(56, 95, 113);
+    --red: rgb(134, 13, 48);
+    --vanilla: rgb(244, 238, 169);
+    --brown: rgb(143, 117, 79);
+}
