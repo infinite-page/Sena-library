@@ -1,11 +1,9 @@
 let books = [
-
-
     { 
 
         title: 'Little prince',
         author: 'Antoine de Saint-Exupéry',
-        gender: 'narrative literary genre', 
+        gender: 'literature', 
         language: 'English',
         price: 20000,
         format: 'ebook',
@@ -23,7 +21,7 @@ let books = [
     
         title: 'To kill a Monckingbird', 
         author: 'Harper Lee',
-        gender: 'Narrative Literary',
+        gender: 'literature',
         language: 'English',
         price: 30000, 
         format: 'ebook',
@@ -40,7 +38,7 @@ let books = [
     {
         title: 'Pride and Prejudice',
         author: 'Jane Austen',
-        genre: 'Romance, Comedy of Manners',
+        genre: 'Romance',
         language: 'English',
         price: 30000,
         format: 'ebook',
@@ -75,7 +73,7 @@ let books = [
       {
         title: 'The Great Gatsby',
         author: 'F. Scott Fitzgerald',
-        genre: 'Tragedy, Jazz Age',
+        genre: 'Tragedy',
         language: 'English',
         price: 40000,
         format: 'ebook',
@@ -92,7 +90,7 @@ let books = [
       {
         Title: 'The Hobbit',
         Author: 'J.R.R. Tolkien',
-        Genre: 'Fantasy, Adventure',
+        Genre: 'Adventure',
         Language: 'English',
         Price: 60000,
         Format: 'ebook',
@@ -108,7 +106,7 @@ let books = [
       {
         Title: 'The Lord of the Rings',
         Author: 'J.R.R. Tolkien',
-        Genre: 'Fantasy, Epic',
+        Genre: 'Epic',
         Language: 'English',
         Price: 30000,
         Format: 'ebook',
@@ -125,7 +123,7 @@ let books = [
       {
         Title: 'Alice"s Adventures in Wonderland',
         Author: 'Lewis Carroll',
-        Genre: 'Fantasy, Children\'s Literature',
+        Genre: 'Literature',
         Language: 'English',
         Price: 20000,
         Format: 'ebook',
@@ -142,7 +140,7 @@ let books = [
       {
         Title: 'Cien años de soledad',
         Author: 'Gabriel García Márquez',
-        Genre: 'Magical Realism, Literary Fiction',
+        Genre: 'Fiction',
         Language: 'Spanish',
         Price: 100000,
         Format: 'ebook',
@@ -158,7 +156,7 @@ let books = [
       {
         Title: 'The Alchemist',
         Author: 'Paulo Coelho',
-        Genre: 'Fiction, Allegory',
+        Genre: 'Fiction',
         Language: 'English',
         Price: 20000,
         Format: 'ebook',
@@ -175,7 +173,7 @@ let books = [
       {
         Title: 'The Catcher in the Rye',
         Author: 'J.D. Salinger',
-        Genre: 'Fiction, Coming-of-Age',
+        Genre: 'Fiction',
         Language: 'English',
         Price: 20000,
         Format: 'ebook',
@@ -192,7 +190,7 @@ let books = [
       {
         Title: 'Love in the Time of Cholera',
         Author: 'Gabriel García Márquez',
-        Genre: 'Magical Realism, Romance',
+        Genre: 'Romance',
         Language: 'Spanish',
         Price: 70000,
         Format: 'ebook',
@@ -208,7 +206,7 @@ let books = [
       {
         Title: 'Chronicle of a Death Foretold',
         Author: 'Gabriel García Márquez',
-        Genre: 'Magical Realism, Mystery',
+        Genre: 'Mystery',
         Language: 'Spanish',
         Price: 45000,
         Format: 'ebook',
@@ -224,7 +222,7 @@ let books = [
       {
         Title: 'The Sound of Things Falling',
         Author: 'Juan Gabriel Vásquez',
-        Genre: 'Fiction, Historical',
+        Genre: 'Historical',
         Language: 'Spanish',
         Price: 87000,
         Format: 'ebook',
@@ -240,7 +238,7 @@ let books = [
       {
         Title: 'The Death of Artemio Cruz',
         Author: 'Carlos Fuentes',
-        Genre: 'Fiction, Political',
+        Genre: 'Fiction',
         Language: 'Spanish',
         Price: 69000,
         Format: 'ebook',
@@ -257,7 +255,7 @@ let books = [
       {
         Title: 'The House of the Spirits',
         Author: 'Isabel Allende',
-        Genre: 'Magical Realism, Family Saga',
+        Genre: 'Magical Realism',
         Language: 'Spanish',
         Price: 38000,
         Format: 'ebook',
@@ -273,7 +271,7 @@ let books = [
       {
         Title: 'Pedro Páramo',
         Author: 'Juan Rulfo',
-        Genre: 'Magical Realism, Fiction',
+        Genre: 'Fiction',
         Language: 'Spanish',
         Price: 25000,
         Format: 'ebook',
@@ -289,7 +287,7 @@ let books = [
       {
         Title: 'The Posthumous Memoirs of Bras Cubas',
         Author: 'Machado de Assis',
-        Genre: 'Satire, Fiction',
+        Genre: 'Fiction',
         Language: 'Portuguese',
         Price: 55000,
         Format: 'ebook',
@@ -306,7 +304,7 @@ let books = [
       {
         Title: 'Hopscotch',
         Author: 'Julio Cortázar',
-        Genre: 'Experimental Fiction',
+        Genre: 'Fiction',
         Language: 'Spanish',
         Price: 100000,
         Format: 'ebook',
@@ -323,7 +321,7 @@ let books = [
       {
         Title: 'The Aleph',
         Author: 'Jorge Luis Borges',
-        Genre: 'Short Stories, Metafiction',
+        Genre: 'Fiction',
         Language: 'Spanish',
         Price: 30000,
         Format: 'ebook',
@@ -335,9 +333,46 @@ let books = [
         Editorial: 'Penguin Classics',
         Pages: 272
       }
-
-
-
-
-  
   ];
+
+
+  //// filter price//
+function pressPrices(){
+const filterPrice = books.filter(books => books.Price >= 30000 && books.Price <= 80000  )
+return filterPrice
+}
+
+console.log(pressPrices())
+
+
+
+
+
+/////filter pages (there is somthing wrong(we dont know include the teacher))////
+function pressPages(){
+
+return books.filter(book => book.Pages >= 200)
+
+}
+console.log(pressPages())
+
+
+
+
+
+
+document.getElementById('registerForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+let cc = document.getElementById('cc').value
+let email = document.getElementById('email').value
+let cellphone = document.getElementById('cellphone').value
+let name = document.getElementById('name').value
+
+if ( name === 'name' && cc === 'cc' && email === 'email' && cellphone === 'cellphone') {
+  alert('Registro exitoso');
+
+} else {
+  alert('Algo salio mal, intenta de Nuevo');
+}
+});
