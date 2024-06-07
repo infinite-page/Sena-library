@@ -13,7 +13,8 @@ let books = [
         location: 'Sena Comercio y Turismo', 
         publication_date: 'April 6, 1943', 
         editorial: 'Reynal & Hitchcock', 
-        pages: 100
+        pages: 100,
+        Stock: 10
 
 },
 
@@ -31,7 +32,8 @@ let books = [
         location: 'Sena Comercio y Turismo', 
         publication_date: 'AJuly 11, 1960',
         editorial: 'J. B. Lippincott & Co.',
-        pages: 300
+        pages: 300,
+        Stock: 20
                 
     },
 
@@ -48,7 +50,8 @@ let books = [
         location: 'Sena Comercio y Turismo',
         publication_date: 'January 28, 1813',
         editorial: 'Penguin Classics',
-        pages: 368
+        pages: 368,
+        Stock: 5
       },
 
 
@@ -65,7 +68,8 @@ let books = [
         location: 'Sena Comercio y Turismo',
         publication_date: 'June 26, 1997',
         editorial: 'Bloomsbury Publishing',
-        pages: 223
+        pages: 223,
+        Stock: 0
       },
 
 
@@ -83,7 +87,8 @@ let books = [
         location: 'Sena Comercio y Turismo',
         publication_date: 'April 10, 1925',
         editorial: 'Scribner',
-        pages: 180
+        pages: 180,
+        Stock: 9
       },
 
 
@@ -100,7 +105,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: 'September 21, 1937',
         Editorial: 'Houghton Mifflin Harcourt',
-        Pages: 310
+        Pages: 310,
+        Stock: 1
       },
 
       {
@@ -116,7 +122,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: 'October 20, 1955',
         Editorial: 'Houghton Mifflin Harcourt',
-        Pages: 1178
+        Pages: 1178,
+        Stock: 17
       },
 
 
@@ -133,7 +140,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: 'July 4, 1865',
         Editorial: 'Penguin Classics',
-        Pages: 176
+        Pages: 176,
+        Stock: 90
       },
 
 
@@ -150,7 +158,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: 'May 30, 1967',
         Editorial: 'Vintage Español',
-        Pages: 417
+        Pages: 417,
+        Stock: 50
       },
 
       {
@@ -166,7 +175,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: '1988',
         Editorial: 'HarperOne',
-        Pages: 208
+        Pages: 208,
+        Stock: 100
       },
 
 
@@ -183,7 +193,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: 'July 16, 1951',
         Editorial: 'Little, Brown and Company',
-        Pages: 224
+        Pages: 224,
+        Stock: 50
       },
 
 
@@ -200,7 +211,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: '1985',
         Editorial: 'Vintage Español',
-        Pages: 368
+        Pages: 368,
+        Stock: 20
       },
 
       {
@@ -216,7 +228,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: '1981',
         Editorial: 'Vintage Español',
-        Pages: 128
+        Pages: 128,
+        Stock: 30
       },
 
       {
@@ -232,7 +245,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: '2011',
         Editorial: 'Riverhead Books',
-        Pages: 320
+        Pages: 320,
+        Stock: 15
       },
 
       {
@@ -248,7 +262,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: '1962',
         Editorial: 'Farrar, Straus and Giroux',
-        Pages: 304
+        Pages: 304,
+        Stock: 20
       },
 
 
@@ -265,7 +280,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: '1982',
         Editorial: 'Atria Books',
-        Pages: 496
+        Pages: 496,
+        Stock: 10
       },
 
       {
@@ -281,7 +297,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: '1955',
         Editorial: 'Cátedra',
-        Pages: 124
+        Pages: 124,
+        Stock: 15
       },
 
       {
@@ -297,7 +314,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: '1881',
         Editorial: 'Oxford University Press',
-        Pages: 256
+        Pages: 256,
+        Stock: 0
       },
 
 
@@ -314,7 +332,8 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: '1963',
         Editorial: 'Pantheon Books',
-        Pages: 576
+        Pages: 576,
+        Stock: 5
       },
 
 
@@ -331,18 +350,19 @@ let books = [
         Location: 'Sena Comercio y Turismo',
         Publication_Date: '1949',
         Editorial: 'Penguin Classics',
-        Pages: 272
+        Pages: 272,
+        Stock: 10
       }
   ];
 
 
   //// filter price//
-function pressPrices(){
-const filterPrice = books.filter(books => books.Price >= 30000 && books.Price <= 80000  )
-return filterPrice
+function pressPrices30_80(){
+const filterPrice30_80 = books.filter(books => books.Price >= 30000 && books.Price <= 80000  )
+return filterPrice30_80
 }
 
-console.log(pressPrices())
+console.log(pressPrices30_80())
 
 
 
@@ -359,8 +379,8 @@ console.log(pressPages())
 
 
 
-
-
+////register////
+function register(){
 document.getElementById('registerForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -369,10 +389,20 @@ let email = document.getElementById('email').value
 let cellphone = document.getElementById('cellphone').value
 let name = document.getElementById('name').value
 
-if ( name === 'name' && cc === 'cc' && email === 'email' && cellphone === 'cellphone') {
+if ( name !== null && cc !== null && email !== null && cellphone !== null) {
   alert('Registro exitoso');
 
 } else {
   alert('Algo salio mal, intenta de Nuevo');
 }
+
 });
+}
+
+// Amount of Stock
+
+function pressStock(){
+  return filterStock = books.sort((a,b) => a.Stock-b.Stock);
+  
+}
+console.table(pressStock())
