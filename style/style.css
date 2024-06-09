@@ -4,7 +4,7 @@
 	font-family: cursive;
 }
 ::selection{
-	background: var(--darkRed);
+	background: crimson;
 	color: var(--vanilla);
 }
 :root{
@@ -127,7 +127,7 @@ header div{
 	justify-content: start;
 }
 .nav_sect{
-	width: 15%;
+	width: 9%;
 }
 #nav_id{
 	display: flex;
@@ -169,18 +169,52 @@ nav .nav-link.active {
 	display: flex;
 	flex-direction: column;
 	padding-top: 50px;
+	text-align: center;
 }
 .descriptions{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
-.categories_words:nth-child(1) > button{
+.categories_words:nth-child(1) > button:nth-child(3),.categories_words:nth-child(1) > button:nth-child(5){
+	border-right: solid 1px var(--vanillaTransparent);
+	margin-right: 2%;
+}
+
+.categories_words > button{
 	background-color: transparent;
 }
-.categories_words:nth-child(1) > h1{
+.categories_words:nth-child(1){
+	display: flex;
+	flex-direction: column;
+}
+.categories_words:nth-child(1) > div:nth-child(1) > h1{
+	font-size: 50px;
 	color: var(--vanilla);
-	font-size: 30px;
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+	padding-bottom: 1.5%;
+}
+.categories_words:nth-child(1) >section > button > img{
+	width: 30px;
+	margin: 0;
+}
+.categories_words:nth-child(1) >section{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 1%;
+	padding: 1%;
+}
+.categories_words:nth-child(1) >section> button{
+	display: flex;
+	flex-direction: row;
+	border-right: solid 1px var(--vanillaTransparent);
+}
+.categories_words:nth-child(1) >section>button> h1{
+	color: var(--vanilla);
+	font-size: 20px;
 }
 .categories_words:nth-child(1){
 	display: flex;
@@ -189,14 +223,14 @@ nav .nav-link.active {
 	padding-bottom: 1%;
 }
 .categories_words:nth-child(2){
-	border-bottom: solid 1px var(--vanilla);
 	width: 60%;
 	padding-bottom: 10px;
 	margin-left: 12%;
+	border-bottom: solid 1px var(--vanillaTransparent);
 }
-.categories_words:nth-child(1) > button, .categories_words:nth-child(2) > button {
+.categories_words:nth-child(1) >section> button, .categories_words:nth-child(2) > button {
 	margin: 0;
-	padding: 0 7px;
+	padding: 0 10px;
 	background-color: transparent;
 	color: var(--vanilla);
 	font-weight: lighter;
@@ -204,13 +238,10 @@ nav .nav-link.active {
 .categories_words:nth-child(2) > button{
 	border-right: solid 1px var(--vanilla);
 }
-.categories_words:nth-child(1) > button > img{
-	width: 30px;
-	margin: 0;
-}
 .categorie-book{
 	color: var(--vanilla);
 	width: 350px;
+	padding: 0 5px;
 }
 .categorie-book > div{
 	display: flex;
@@ -218,9 +249,10 @@ nav .nav-link.active {
 	align-items: center;
 	margin: 20px 0;
 }
+
 .categorie-book > div > img{
 	width: 200px;
-	height: 250px;
+	height: 280px;
 	display: flex;
 	align-self: center;
 }
@@ -235,10 +267,12 @@ nav .nav-link.active {
 	flex-direction: row;
 	align-items: start;
 	margin: 0 0;
-}
-.categorie-book> div > button{
 	display: flex;
 	align-self: center;
+}
+.categorie-book > div > button:active{
+	background-color: var(--red);
+	color: var(--vanilla);
 }
 .categorie-book> div > button> img{
 	width: 30px;
