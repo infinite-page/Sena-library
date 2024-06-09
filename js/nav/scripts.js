@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', event => {
 
     var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#naverg');
+        const navbarCollapsible = document.body.querySelector('#nav_id');
         if (!navbarCollapsible) {
             return;
         }
@@ -17,10 +17,10 @@ window.addEventListener('DOMContentLoaded', event => {
 
     document.addEventListener('scroll', navbarShrink);
 
-    const mainNav = document.body.querySelector('#naverg');
+    const mainNav = document.body.querySelector('#nav_id');
     if (mainNav) {
         new bootstrap.ScrollSpy(document.body, {
-            target: '#naverg',
+            target: '#nav_id',
             rootMargin: '0px 0px -40%',
         });
     };
