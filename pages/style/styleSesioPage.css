@@ -33,6 +33,7 @@ button{
 }
 button:active{
 	background-color: var(--red);
+	box-shadow: 0 0 20px var(--vanilla);
 }
 button span{
 	position: absolute;
