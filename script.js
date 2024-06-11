@@ -1,3 +1,6 @@
+
+//Miguel Angel Londoño//
+
 let books = [
     { 
 
@@ -422,11 +425,26 @@ if ( name !== null && cc !== null && email !== null && cellphone !== null) {
   alert('Algo salio mal, intenta de Nuevo');
 }
 
-});
+})
 }
+      |||||||||||||||||||
+//card pay register//
 
 
+function cardPayRegister(){
+  document.getElementById('cardRegister').addEventListener('submit', function(event) {
+    event.preventDefault();
 
+    let cardNumber =document.getElementById('cardNumber').value
+    let password =document.getElementById('passwordCard').value
+
+    if(cardNumber !== null && password !== nul){
+      alert('Registro de tarjeta exitoso');
+    }else{
+      alert('Algo salio mal, intenta de Nuevo');
+    }
+
+  })}
 // Amount of Stock
 
 function pressStock(){
@@ -443,13 +461,13 @@ console.table(pressStock())
 
 //////reabte day//////
 
-const date = new Date();
-  console.log("Fecha actual:", date); 
-  const currentMonth = date.getMonth();
-  const currentDay = date.getDate();
+const date = new Date()
+  console.log("Fecha actual:", date)
+  const currentMonth = date.getMonth()
+  const currentDay = date.getDate()
   
   if (currentMonth === 8 && currentDay === 24) { 
-      console.log("Hoy es día de rebaja")
+      console.log("¡Hoy es día de rebajas! ¡Infinite Page te desea un feliz dia del lector")
       console.log('Los descuentos de el dia de hoy son del 50%')
       
       let books = [
@@ -827,17 +845,17 @@ const date = new Date();
             Stock: 10,
             discount: 15000
           }
-      ];
-      const rebateDay = books.filter(book => book.discount > 0);
+      ]
+      const rebateDay = books.filter(book => book.discount > 0)
       console.log("Books with discount:", books.title);
     
       const discountedBooks = rebateDay.map(book => ({
           title: book.title,
           price: (book.price - book.discount)
-      }));
+      }))
 
-      console.log("Discounted books:", discountedBooks);
+      console.log("Discounted books:", discountedBooks)
     
   } else {
-      console.log("No es día de rebaja");
+      console.log("No es día de rebaja")
   }
