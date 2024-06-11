@@ -1,13 +1,57 @@
 let books = [
-    { id: 2, title: "beto", Availability:"no", Language:"spanish", Editorial:"new york", Genre:"Literature", Autor:"leonardo", Price:2000, Stock:7},
-    { id: 1, title: "ana", Availability:"yes", Language:"english", Editorial:"waza world", Genre:"Literature", Autor:"perez", Price:20, Stock:5},
-    { id: 3, title: "carlos", Availability:"no", Language:"english", Editorial:"insane waza", Genre:"Historical", Autor:"pablo", Price:200, Stock:2},
-    { id: 4, title: "data", Availability:"yes", Language:"portugues", Editorial:"new york", Genre:"Fiction", Autor:"aron", Price:20000, Stock:3},
-    { id: 5, title: "eduardo", Availability:"yes", Language:"portugues", Editorial:"library com", Genre:"Magical Realism", Autor:"xoka", Price:200000,Stock:1} 
+    { id: 0,
+    Title: "ana",
+    Availability:"yes",
+    Language:"english",
+    Editorial:"waza world",
+    Genre:"Literature",
+    Autor:"perez",
+    Price:20,
+    Stock:5},
+
+    { id: 1, 
+    Title: "beto", 
+    Availability:"no", 
+    Language:"spanish", 
+    Editorial:"new york", 
+    Genre:"Literature", 
+    Autor:"leonardo", 
+    Price:2000, 
+    Stock:7},
+
+    { id: 2,
+    Title: "carlos", 
+    Availability:"no", 
+    Language:"english", 
+    Editorial:"insane waza", 
+    Genre:"Historical", 
+    Autor:"pablo", 
+    Price:200, 
+    Stock:2},
+
+    { id: 3, 
+    Title: "data", 
+    Availability:"yes", 
+    Language:"portugues", 
+    Editorial:"new york", 
+    Genre:"Fiction", 
+    Autor:"aron", 
+    Price:20000, 
+    Stock:3},
+
+    { id: 4, 
+    Title: "eduardo",
+    Availability:"yes", 
+    Language:"portugues", 
+    Editorial:"library com", 
+    Genre:"Magical Realism", 
+    Autor:"xoka", 
+    Price:200000,
+    Stock:1} 
 ]
 // Select Book for modify Stock
 function selectBook(i){
-    let test_variable= typeof Number;
+    res.innerHTML = ""
     if(!isNaN(i)) {
         let operation = prompt("desea agregar o eliminar un libro\n\n +/-");
         pressAmount(operation,i);
@@ -15,51 +59,86 @@ function selectBook(i){
 }
 // Modify Stock
 function pressAmount(operation,i){
-    const filterTitle = books.sort((a,b) => a.title.localeCompare(b.title));
-    filterTitle;
-    if(operation==="+") {
-        const AmountStock = books[i].Stock +=1;
-        return console.log(AmountStock)
-    }else {
-        const AmountStock = books[i].Stock -=1;
-        return console.log(AmountStock)
+    res.innerHTML = ""
+    const filter = books.sort((a,b) => a.Title.localeCompare(b.Title));
+    filter;
+    switch (operation) {
+        case '+':
+            AmountStock = books[i].Stock +=1;
+            res.innerHTML += " Title: "+ filter[i].Title + " Autor: "+ filter[i].Autor + " Price: "+ filter[i].Price +" Stock: "+ filter[i].Stock +"<br>";
+        break;
+        case '-':
+            if (AmountStock<=0) {
+                res.innerHTML += "it can't be lower";
+            }else{
+                AmountStock = books[i].Stock -=1;
+                res.innerHTML += " Title: "+ filter[i].Title + " Autor: "+ filter[i].Autor + " Price: "+ filter[i].Price + " Stock: "+ filter[i].Stock +"<br>";
+        }
+        break;
+        default:  res.innerHTML = "invalid value";
+        break;
     }
 }
 // Functions to search by availability-editorial-language
 function pressAvailability(){
-const filterAvailability = books.sort((a,b) => b.Availability.localeCompare(a.Availability));
-return filterAvailability
+    res.innerHTML = ""
+    filter = books.sort((a,b) => b.Availability.localeCompare(a.Availability));
+    for (let i = 0; i < filter.length; i++) {
+        res.innerHTML += " Title: "+ filter[i].Title + " Autor: "+ filter[i].Autor + " Price: "+ filter[i].Price +"<br>";
+}
 }
 function pressLanguage(){
-    const filterLanguage = books.sort((a,b) => a.Language.localeCompare(b.Language)); 
-    return filterLanguage 
+    res.innerHTML = ""
+    filter = books.sort((a,b) => a.Language.localeCompare(b.Language)); 
+    for (let i = 0; i < filter.length; i++) {
+        res.innerHTML += " Title: "+ filter[i].Title + " Autor: "+ filter[i].Autor + " Price: "+ filter[i].Price +"<br>";
+}
 }
 function  pressEditorial(){
-    const filterEditorial = books.sort((a,b) => a.Editorial.localeCompare(b.Editorial)); 
-    return filterEditorial
+    res.innerHTML = ""
+    filter = books.sort((a,b) => a.Editorial.localeCompare(b.Editorial)); 
+    for (let i = 0; i < filter.length; i++) {
+        res.innerHTML += " Title: "+ filter[i].Title + " Autor: "+ filter[i].Autor + " Price: "+ filter[i].Price +"<br>";
+}
 }
 // Search by Gender
 function pressGenre(GenreOptions){
-    const filterGenre = books.filter((a) => a.Genre===GenreOptions);
-    return (filterGenre)
+    res.innerHTML = ""
+    filter = books.filter((a) => a.Genre===GenreOptions);
+    if (filter.length===0) {
+        res.innerHTML += "not books found";
+    }else{
+    for (let i = 0; i < filter.length; i++) {
+        res.innerHTML += " Title: "+ filter[i].Title + " Autor: "+ filter[i].Autor + " Price: "+ filter[i].Price +"<br>";
+    }
+    }
+    
 }
 // Search by Autor
 function pressAutor(){
-    const filterAutor = books.sort((a,b) => a.Autor.localeCompare(b.Autor));
-    return filterAutor
+    res.innerHTML = ""
+    filter = books.sort((a,b) => a.Autor.localeCompare(b.Autor));
+    for (let i = 0; i < filter.length; i++) {
+        res.innerHTML += " Title: "+ filter[i].Title + " Autor: "+ filter[i].Autor + " Price: "+ filter[i].Price +"<br>";
+}
 }
 // Search by Price
 function PressPrice(){
-    const filterPrice = books.sort((a,b) => a.Price-b.Price);
-    return filterPrice
+    res.innerHTML = ""
+    filter = books.sort((a,b) => a.Price-b.Price);
+    for (let i = 0; i < filter.length; i++) {
+        res.innerHTML += " Title: "+ filter[i].Title + " Autor: "+ filter[i].Autor + " Price: "+ filter[i].Price +"<br>";
+}
 }
 // search by Title A-Z and Z-A
 function pressTitle(option){
+    res.innerHTML = ""
     if (option==="A-Z"){
-    const filterTitle = books.sort((a,b) => a.title.localeCompare(b.title));
-    return filterTitle
+        filter = books.sort((a,b) => a.Title.localeCompare(b.Title));
     }else{
-        const filterTitle = books.sort((a,b) => b.title.localeCompare(a.title));
-        return filterTitle
+        filter = books.sort((a,b) => b.Title.localeCompare(a.Title));
     }
+    for (let i = 0; i < filter.length; i++) {
+        res.innerHTML  += " Title: "+ filter[i].Title + " Autor: "+ filter[i].Autor + " Price: "+ filter[i].Price +"<br>";    
+}
 }
