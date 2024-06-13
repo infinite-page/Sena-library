@@ -11,11 +11,15 @@
 	--blue: rgb(158, 173, 200);
 	--gray: rgb(56, 95, 113);
 	--red: rgb(134, 13, 48);
+	--redTransparent: rgba(134, 13, 47, 0.555);
 	--darkRed: rgb(60, 6, 21);
 	--ultradark: rgb(21,7,9);
 	--vanilla: rgb(244, 238, 169);
 	--vanillaTransparent: rgba(244, 238, 169, 0.582);
 	--brown: rgb(143, 117, 79);
+}
+main{
+	background: linear-gradient(to top, var(--darkRed), var(--ultradark));
 }
 button{
 	background-color: var(--vanilla);
@@ -32,6 +36,7 @@ button{
 }
 button:active{
 	background-color: var(--vanillaTransparent);
+	transform: scale(.97);
 }
 button span{
 	position: absolute;
@@ -84,11 +89,13 @@ button:hover span:nth-child(4){
 /* Header */
 
 header{
-	background-color: var(--red);
+	background: var(--redTransparent);
 	display: flex;
 	align-items: center;
 	padding: 10px 0;
 	color: var(--vanilla);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 	justify-content: space-around;
 	position: fixed;
 	width: 100%;
@@ -99,6 +106,7 @@ header{
 header div{
 	display: flex;
 	flex-direction: row;
+	
 }
 .logo_h1{
 	display: flex;
@@ -116,10 +124,13 @@ header div{
 	border-top: none;
 	border-left:none;
 	border-right: none;
-	background-color: var(--red);
+	background-color: transparent;
 	border-bottom: solid 1px var(--vanillaTransparent);
 	width: 500px;
 	color: var(--vanilla);
+}
+#input_head::placeholder{
+	color: var(--vanillaTransparent);
 }
 #h1_head{
 	display: flex;
@@ -136,6 +147,7 @@ header div{
 a{
 	text-decoration: none;
 	color: var(--vanilla);
+	padding: 5px 0;
 }
 nav .nav-link.active {
 	color: var(--vanillaTransparent);
@@ -173,7 +185,7 @@ nav .nav-link.active {
 /* Section #2 */
 
 .categories{
-	background: linear-gradient(to top, var(--darkRed), var(--ultradark));
+	
 	height: auto;
 	display: flex;
 	flex-direction: column;
@@ -266,6 +278,13 @@ nav .nav-link.active {
 	height: 280px;
 	display: flex;
 	align-self: center;
+	transition: .1s;
+}
+.categorie-book > div > img:hover{
+	width: 210px;
+	height: 290px; 
+	margin-bottom:-10px ;
+	cursor:none;
 }
 .categorie-book > div > p{
 	padding: 5px 0;
@@ -284,11 +303,27 @@ nav .nav-link.active {
 .categorie-book > div > a > button:active{
 	background-color: var(--red);
 	color: var(--vanilla);
+	box-shadow: 0 0 20px var(--brown);
 }
 .categorie-book> div > a > button> img{
 	width: 30px;
 }
-
+/* ---Footer--- */
+footer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: .7% 0;
+	margin-top: 3%;
+	align-self: center;
+	align-items: center;
+}
+footer>div{
+	background: linear-gradient(var(--red), var(--vanilla));
+	background-clip: text;
+	-webkit-text-stroke: 8px transparent;
+	padding: 0 1%;
+}
 /* ---------Media QUERY--------- */
 @media screen and (max-width:921px) {
 	

@@ -16,6 +16,7 @@
 	--vanilla: rgb(244, 238, 169);
 	--vanillaTransparent: rgba(244, 238, 169, 0.582);
 	--brown: #7c3b1a;
+	--brownTransparent: #7c3b1a9c;
 }
 button{
 	background-color: var(--darkRed);
@@ -34,11 +35,15 @@ button{
 button:active{
 	background-color: var(--red);
 	box-shadow: 0 0 20px var(--vanilla);
+	transform: scale(.97);
 }
 button span{
 	position: absolute;
 	background-color: var(--brown);
 	transition: .7s;
+}
+button:active span{
+	background-color: var(--red);
 }
 button span:nth-child(1){
 	width: 100%;
@@ -86,8 +91,9 @@ main{
 	align-items: center;
 }
 .data{
-	background-color: var(--brown);
-	opacity: 80%;
+	background-color: var(--brownTransparent);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 	border-radius: 10px;
 	box-shadow: 0 0 100px var(--blue);
 	display: flex;
