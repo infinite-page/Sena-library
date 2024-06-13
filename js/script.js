@@ -1,46 +1,41 @@
 
-
 //Miguel Angel Londoño//
 
 let books = [
-    { 
-
+    {
         title: 'Little prince',
         author: 'Antoine de Saint-Exupéry',
-        gender: 'literature', 
+        gender: 'literature',
         language: 'English',
         price: 20000,
         format: 'ebook',
-        isbn: '9109109', 
-        description: 'is a timeless tale about a young prince who explores the universe, learning profound lessons about love, friendship, and the human condition along the way', 
-        status: 'new', 
-        location: 'Sena Comercio y Turismo', 
-        publication_date: 'April 6, 1943', 
-        editorial: 'Reynal & Hitchcock', 
+        isbn: '9109109',
+        description: 'is a timeless tale about a young prince who explores the universe, learning profound lessons about love, friendship, and the human condition along the way',
+        status: 'new',
+        location: 'Sena Comercio y Turismo',
+        publication_date: 'April 6, 1943',
+        editorial: 'Reynal & Hitchcock',
         pages: 100,
         Stock: 10,
         discount: 10000
-
-},
+    },
 
     {
-    
-        title: 'To kill a Monckingbird', 
+        title: 'To kill a Monckingbird',
         author: 'Harper Lee',
         gender: 'literature',
         language: 'English',
-        price: 30000, 
+        price: 30000,
         format: 'ebook',
         isbn: '9780451524935',
         description: 'A classic novel set in the American South, exploring themes of racial injustice and moral growth through the eyes of a young girl',
         status: 'new',
-        location: 'Sena Comercio y Turismo', 
+        location: 'Sena Comercio y Turismo',
         publication_date: 'AJuly 11, 1960',
         editorial: 'J. B. Lippincott & Co.',
         pages: 300,
         Stock: 20,
         discount: 15000
-                
     },
 
     {
@@ -59,10 +54,9 @@ let books = [
         pages: 368,
         Stock: 5,
         discount: 15000
-      },
+    },
 
-
-      {
+    {
         title: 'Harry Potter and the Sorcerer"s Stone',
         author: 'J.K. Rowling',
         genre: 'Fantasy',
@@ -78,11 +72,9 @@ let books = [
         pages: 223,
         Stock: 0,
         discount: 15000
-      },
+    },
 
-
-
-      {
+    {
         title: 'The Great Gatsby',
         author: 'F. Scott Fitzgerald',
         genre: 'Tragedy',
@@ -98,10 +90,9 @@ let books = [
         pages: 180,
         Stock: 9,
         discount: 20000
-      },
+    },
 
-
-      {
+    {
         Title: 'The Hobbit',
         Author: 'J.R.R. Tolkien',
         Genre: 'Adventure',
@@ -117,9 +108,9 @@ let books = [
         Pages: 310,
         Stock: 1,
         discount: 30000
-      },
+    },
 
-      {
+    {
         Title: 'The Lord of the Rings',
         Author: 'J.R.R. Tolkien',
         Genre: 'Epic',
@@ -135,10 +126,9 @@ let books = [
         Pages: 1178,
         Stock: 17,
         discount: 15000
-      },
+    },
 
-
-      {
+    {
         Title: 'Alice"s Adventures in Wonderland',
         Author: 'Lewis Carroll',
         Genre: 'Literature',
@@ -154,10 +144,9 @@ let books = [
         Pages: 176,
         Stock: 90,
         discount: 10000
-      },
+    },
 
-
-      {
+    {
         Title: 'Cien años de soledad',
         Author: 'Gabriel García Márquez',
         Genre: 'Fiction',
@@ -173,9 +162,9 @@ let books = [
         Pages: 417,
         Stock: 50,
         discount: 50000
-      },
+    },
 
-      {
+    {
         Title: 'The Alchemist',
         Author: 'Paulo Coelho',
         Genre: 'Fiction',
@@ -191,10 +180,9 @@ let books = [
         Pages: 208,
         Stock: 100,
         discount: 10000
-      },
+    },
 
-
-      {
+    {
         Title: 'The Catcher in the Rye',
         Author: 'J.D. Salinger',
         Genre: 'Fiction',
@@ -210,10 +198,9 @@ let books = [
         Pages: 224,
         Stock: 50,
         discount: 10000
-      },
+    },
 
-
-      {
+    {
         Title: 'Love in the Time of Cholera',
         Author: 'Gabriel García Márquez',
         Genre: 'Romance',
@@ -229,9 +216,9 @@ let books = [
         Pages: 368,
         Stock: 20,
         discount: 35000
-      },
+    },
 
-      {
+    {
         Title: 'Chronicle of a Death Foretold',
         Author: 'Gabriel García Márquez',
         Genre: 'Mystery',
@@ -247,9 +234,9 @@ let books = [
         Pages: 128,
         Stock: 30,
         discount: 22500
-      },
+    },
 
-      {
+    {
         Title: 'The Sound of Things Falling',
         Author: 'Juan Gabriel Vásquez',
         Genre: 'Historical',
@@ -265,9 +252,9 @@ let books = [
         Pages: 320,
         Stock: 15,
         discount: 43500
-      },
+    },
 
-      {
+    {
         Title: 'The Death of Artemio Cruz',
         Author: 'Carlos Fuentes',
         Genre: 'Fiction',
@@ -283,10 +270,9 @@ let books = [
         Pages: 304,
         Stock: 20,
         discount: 34500
-      },
+    },
 
-
-      {
+    {
         Title: 'The House of the Spirits',
         Author: 'Isabel Allende',
         Genre: 'Magical Realism',
@@ -302,9 +288,9 @@ let books = [
         Pages: 496,
         Stock: 10,
         discount: 19000
-      },
+    },
 
-      {
+    {
         Title: 'Pedro Páramo',
         Author: 'Juan Rulfo',
         Genre: 'Fiction',
@@ -320,9 +306,9 @@ let books = [
         Pages: 124,
         Stock: 15,
         discount: 12500
-      },
+    },
 
-      {
+    {
         Title: 'The Posthumous Memoirs of Bras Cubas',
         Author: 'Machado de Assis',
         Genre: 'Fiction',
@@ -338,10 +324,9 @@ let books = [
         Pages: 256,
         Stock: 0,
         discount: 27500
-      },
+    },
 
-
-      {
+    {
         Title: 'Hopscotch',
         Author: 'Julio Cortázar',
         Genre: 'Fiction',
@@ -357,10 +342,9 @@ let books = [
         Pages: 576,
         Stock: 5,
         discount: 50000
-      },
+    },
 
-
-      {
+    {
         Title: 'The Aleph',
         Author: 'Jorge Luis Borges',
         Genre: 'Fiction',
@@ -376,143 +360,116 @@ let books = [
         Pages: 272,
         Stock: 10,
         discount: 15000
-      }
-  ];
+    }
+];
 
-
-  //// filter price//
-function pressPrices30_80(){
-const filterPrice30_80 = books.filter(books => books.Price >= 30000 && books.Price <= 80000  )
-return filterPrice30_80
+//// filter price//
+function pressPrices30_80() {
+    const filterPrice30_80 = books.filter(books => books.Price >= 30000 && books.Price <= 80000)
+    return filterPrice30_80
 }
 
 console.log(pressPrices30_80())
 
 
-
-
-
-
-
 /////filter pages (there is somthing wrong(we dont know include the teacher))////
 
-function pressPages(){
-
-return books.filter(book => book.Pages >= 200)
-
+function pressPages() {
+    return books.filter(book => book.Pages >= 200)
 }
 console.log(pressPages())
 
 
-
-
-
-
 ////register////
 
-function register(){
-document.getElementById('registerForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-let cc = document.getElementById('cc').value
-let email = document.getElementById('email').value
-let cellphone = document.getElementById('cellphone').value
-let name = document.getElementById('name').value
-
-if ( name !== null && cc !== null && email !== null && cellphone !== null) {
-  alert('Registro exitoso');
-
-} else {
-  alert('Algo salio mal, intenta de Nuevo');
+function register() {
+    document.getElementById('registerForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        let cc = document.getElementById('cc').value
+        let email = document.getElementById('email').value
+        let cellphone = document.getElementById('cellphone').value
+        let name = document.getElementById('name').value
+        if (name !== null && cc !== null && email !== null && cellphone !== null) {
+            alert('Registro exitoso');
+        } else {
+            alert('Algo salio mal, intenta de Nuevo');
+        }
+    })
 }
 
-})
-}
- 
 
 //card pay register//
 
 
-function cardPayRegister(){
-  document.getElementById('cardRegister').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    let cardNumber =document.getElementById('cardNumber').value
-    let password =document.getElementById('passwordCard').value
-
-    if(cardNumber !== null && password !== nul){
-      alert('Registro de tarjeta exitoso');
-    }else{
-      alert('Algo salio mal, intenta de Nuevo');
-    }
-
-  })}
+function cardPayRegister() {
+    document.getElementById('cardRegister').addEventListener('submit', function (event) {
+        event.preventDefault();
+        let cardNumber = document.getElementById('cardNumber').value
+        let password = document.getElementById('passwordCard').value
+        if (cardNumber !== null && password !== nul) {
+            alert('Registro de tarjeta exitoso');
+        } else {
+            alert('Algo salio mal, intenta de Nuevo');
+        }
+    })
+}
 // Amount of Stock
 
-function pressStock(){
-  return filterStock = books.sort((a,b) => a.Stock-b.Stock);
-  
+function pressStock() {
+    return filterStock = books.sort((a, b) => a.Stock - b.Stock);
 }
 console.table(pressStock())
-
-
-
-
-
 
 
 //////reabte day//////
 
 const date = new Date()
-  console.log("Fecha actual:", date)
-  const currentMonth = date.getMonth()
-  const currentDay = date.getDate()
-  
-  if (currentMonth === 8 && currentDay === 24) { 
-      console.log("¡Hoy es día de rebajas! ¡Infinite Page te desea un feliz dia del lector")
-      console.log('Los descuentos de el dia de hoy son del 50%')
-      
-      let books = [
-        { 
-    
+console.log("Fecha actual:", date)
+const currentMonth = date.getMonth()
+const currentDay = date.getDate()
+
+if (currentMonth === 8 && currentDay === 24) {
+    console.log("¡Hoy es día de rebajas! ¡Infinite Page te desea un feliz dia del lector")
+    console.log('Los descuentos de el dia de hoy son del 50%')
+
+    let books = [
+        {
+
             title: 'Little prince',
             author: 'Antoine de Saint-Exupéry',
-            gender: 'literature', 
+            gender: 'literature',
             language: 'English',
             price: 20000,
             format: 'ebook',
-            isbn: '9109109', 
-            description: 'is a timeless tale about a young prince who explores the universe, learning profound lessons about love, friendship, and the human condition along the way', 
-            status: 'new', 
-            location: 'Sena Comercio y Turismo', 
-            publication_date: 'April 6, 1943', 
-            editorial: 'Reynal & Hitchcock', 
+            isbn: '9109109',
+            description: 'is a timeless tale about a young prince who explores the universe, learning profound lessons about love, friendship, and the human condition along the way',
+            status: 'new',
+            location: 'Sena Comercio y Turismo',
+            publication_date: 'April 6, 1943',
+            editorial: 'Reynal & Hitchcock',
             pages: 100,
             Stock: 10,
             discount: 10000
-    
-    },
-    
+        },
+
         {
-        
-            title: 'To kill a Monckingbird', 
+            title: 'To kill a Monckingbird',
             author: 'Harper Lee',
             gender: 'literature',
             language: 'English',
-            price: 30000, 
+            price: 30000,
             format: 'ebook',
             isbn: '9780451524935',
             description: 'A classic novel set in the American South, exploring themes of racial injustice and moral growth through the eyes of a young girl',
             status: 'new',
-            location: 'Sena Comercio y Turismo', 
+            location: 'Sena Comercio y Turismo',
             publication_date: 'AJuly 11, 1960',
             editorial: 'J. B. Lippincott & Co.',
             pages: 300,
             Stock: 20,
             discount: 15000
-                    
         },
-    
+
         {
             title: 'Pride and Prejudice',
             author: 'Jane Austen',
@@ -529,10 +486,9 @@ const date = new Date()
             pages: 368,
             Stock: 5,
             discount: 15000
-          },
-    
-    
-          {
+        },
+
+        {
             title: 'Harry Potter and the Sorcerer"s Stone',
             author: 'J.K. Rowling',
             genre: 'Fantasy',
@@ -548,11 +504,9 @@ const date = new Date()
             pages: 223,
             Stock: 0,
             discount: 15000
-          },
-    
-    
-    
-          {
+        },
+
+        {
             title: 'The Great Gatsby',
             author: 'F. Scott Fitzgerald',
             genre: 'Tragedy',
@@ -568,10 +522,9 @@ const date = new Date()
             pages: 180,
             Stock: 9,
             discount: 20000
-          },
-    
-    
-          {
+        },
+
+        {
             title: 'The Hobbit',
             Author: 'J.R.R. Tolkien',
             Genre: 'Adventure',
@@ -587,9 +540,9 @@ const date = new Date()
             Pages: 310,
             Stock: 1,
             discount: 30000
-          },
-    
-          {
+        },
+
+        {
             title: 'The Lord of the Rings',
             Author: 'J.R.R. Tolkien',
             Genre: 'Epic',
@@ -605,10 +558,9 @@ const date = new Date()
             Pages: 1178,
             Stock: 17,
             discount: 15000
-          },
-    
-    
-          {
+        },
+
+        {
             title: 'Alice"s Adventures in Wonderland',
             Author: 'Lewis Carroll',
             Genre: 'Literature',
@@ -624,10 +576,9 @@ const date = new Date()
             Pages: 176,
             Stock: 90,
             discount: 10000
-          },
-    
-    
-          {
+        },
+
+        {
             title: 'Cien años de soledad',
             Author: 'Gabriel García Márquez',
             Genre: 'Fiction',
@@ -643,9 +594,9 @@ const date = new Date()
             Pages: 417,
             Stock: 50,
             discount: 50000
-          },
-    
-          {
+        },
+
+        {
             title: 'The Alchemist',
             Author: 'Paulo Coelho',
             Genre: 'Fiction',
@@ -661,10 +612,9 @@ const date = new Date()
             Pages: 208,
             Stock: 100,
             discount: 10000
-          },
-    
-    
-          {
+        },
+
+        {
             title: 'The Catcher in the Rye',
             Author: 'J.D. Salinger',
             Genre: 'Fiction',
@@ -680,10 +630,9 @@ const date = new Date()
             Pages: 224,
             Stock: 50,
             discount: 10000
-          },
-    
-    
-          {
+        },
+
+        {
             title: 'Love in the Time of Cholera',
             Author: 'Gabriel García Márquez',
             Genre: 'Romance',
@@ -699,9 +648,9 @@ const date = new Date()
             Pages: 368,
             Stock: 20,
             discount: 35000
-          },
-    
-          {
+        },
+
+        {
             title: 'Chronicle of a Death Foretold',
             Author: 'Gabriel García Márquez',
             Genre: 'Mystery',
@@ -717,9 +666,9 @@ const date = new Date()
             Pages: 128,
             Stock: 30,
             discount: 22500
-          },
-    
-          {
+        },
+
+        {
             title: 'The Sound of Things Falling',
             Author: 'Juan Gabriel Vásquez',
             Genre: 'Historical',
@@ -735,9 +684,9 @@ const date = new Date()
             Pages: 320,
             Stock: 15,
             discount: 43500
-          },
-    
-          {
+        },
+
+        {
             title: 'The Death of Artemio Cruz',
             Author: 'Carlos Fuentes',
             Genre: 'Fiction',
@@ -753,10 +702,9 @@ const date = new Date()
             Pages: 304,
             Stock: 20,
             discount: 34500
-          },
-    
-    
-          {
+        },
+
+        {
             title: 'The House of the Spirits',
             Author: 'Isabel Allende',
             Genre: 'Magical Realism',
@@ -772,9 +720,9 @@ const date = new Date()
             Pages: 496,
             Stock: 10,
             discount: 19000
-          },
-    
-          {
+        },
+
+        {
             title: 'Pedro Páramo',
             Author: 'Juan Rulfo',
             Genre: 'Fiction',
@@ -790,9 +738,9 @@ const date = new Date()
             Pages: 124,
             Stock: 15,
             discount: 12500
-          },
-    
-          {
+        },
+
+        {
             title: 'The Posthumous Memoirs of Bras Cubas',
             Author: 'Machado de Assis',
             Genre: 'Fiction',
@@ -808,10 +756,9 @@ const date = new Date()
             Pages: 256,
             Stock: 0,
             discount: 27500
-          },
-    
-    
-          {
+        },
+
+        {
             title: 'Hopscotch',
             Author: 'Julio Cortázar',
             Genre: 'Fiction',
@@ -827,10 +774,9 @@ const date = new Date()
             Pages: 576,
             Stock: 5,
             discount: 50000
-          },
-    
-    
-          {
+        },
+
+        {
             title: 'The Aleph',
             Author: 'Jorge Luis Borges',
             Genre: 'Fiction',
@@ -846,18 +792,155 @@ const date = new Date()
             Pages: 272,
             Stock: 10,
             discount: 15000
-          }
-      ]
-      const rebateDay = books.filter(book => book.discount > 0)
-      console.log("Books with discount:", books.title);
-    
-      const discountedBooks = rebateDay.map(book => ({
-          title: book.title,
-          price: (book.price - book.discount)
-      }))
+        }
+    ]
+    const rebateDay = books.filter(book => book.discount > 0)
+    console.log("Books with discount:", books.title);
 
-      console.log("Discounted books:", discountedBooks)
-    
-  } else {
-      console.log("No es día de rebaja")
-  }
+    const discountedBooks = rebateDay.map(book => ({
+        title: book.title,
+        price: (book.price - book.discount)
+    }))
+
+    console.log("Discounted books:", discountedBooks)
+
+} else {
+    console.log("No es día de rebaja")
+}
+
+// Kevin
+
+function selectBook(i) {
+    if (!isNaN(i)) {
+        let operation = prompt("desea agregar o eliminar un libro\n\n +/-");
+        pressAmount(operation, i);
+    }
+}
+// Modify Stock
+function pressAmount(operation, i) {
+    const filter = books.sort((a, b) => a.Title.localeCompare(b.Title));
+    filter;
+    switch (operation) {
+        case '+':
+            AmountStock = books[i].Stock += 1;
+            resTitle[0].innerHTML = " Title: " + filter[i].Title;
+            resAutor[0].innerHTML = " Autor: " + filter[i].Autor;
+            resPrice[0].innerHTML = " Price: " + filter[i].Price;
+            resStock[0].innerHTML = " Stock: " + filter[i].Stock;
+            break;
+        case '-':
+            AmountStock = books[i].Stock;
+            if (AmountStock <= 0) {
+                resTitle.innerHTML = "it can't be lower";
+            } else {
+                AmountStock = books[i].Stock -= 1;
+                resTitle[0].innerHTML = " Title: " + filter[i].Title;
+                resAutor[0].innerHTML = " Autor: " + filter[i].Autor;
+                resPrice[0].innerHTML = " Price: " + filter[i].Price;
+                resStock[0].innerHTML = " Stock: " + filter[i].Stock;
+            }
+            break;
+        default: resTitle.innerHTML = "invalid value";
+            break;
+    }
+}
+// Functions to search by availability-editorial-language
+function pressAvailability() {
+    filter = books.sort((a, b) => b.Availability.localeCompare(a.Availability));
+    for (let i = 0; i < filter.length; i++) {
+        for (let i = 0; i <= filter.length; i++) {
+            resTitle[i + 1].innerHTML = ""
+            resAutor[i + 1].innerHTML = ""
+            resPrice[i + 1].innerHTML = ""
+            resTitle[i].innerHTML = " Title: " + filter[i].Title;
+            resAutor[i].innerHTML = " Autor: " + filter[i].Autor;
+            resPrice[i].innerHTML = " Price: " + filter[i].Price;
+        }
+    }
+}
+function pressLanguage() {
+    filter = books.sort((a, b) => a.Language.localeCompare(b.Language));
+    for (let i = 0; i <= filter.length; i++) {
+        resTitle[i + 1].innerHTML = ""
+        resAutor[i + 1].innerHTML = ""
+        resPrice[i + 1].innerHTML = ""
+        resTitle[i].innerHTML = " Title: " + filter[i].Title;
+        resAutor[i].innerHTML = " Autor: " + filter[i].Autor;
+        resPrice[i].innerHTML = " Price: " + filter[i].Price;
+    }
+}
+function pressEditorial() {
+    filter = books.sort((a, b) => a.Editorial.localeCompare(b.Editorial));
+    for (let i = 0; i <= filter.length; i++) {
+        resTitle[i + 1].innerHTML = ""
+        resAutor[i + 1].innerHTML = ""
+        resPrice[i + 1].innerHTML = ""
+        resTitle[i].innerHTML = " Title: " + filter[i].Title;
+        resAutor[i].innerHTML = " Autor: " + filter[i].Autor;
+        resPrice[i].innerHTML = " Price: " + filter[i].Price;
+    }
+}
+// Search by Gender
+function pressGenre(GenreOptions) {
+    filter = books.filter((a) => a.Genre === GenreOptions);
+    if (filter.length === 0) {
+        for (let i = 0; i <= filter.length + i; i++) {
+            resTitle[i + 1].innerHTML = ""
+            resAutor[i + 1].innerHTML = ""
+            resPrice[i + 1].innerHTML = ""
+            resTitle[0].innerHTML = "not books found"
+            resAutor[i].innerHTML = ""
+            resPrice[i].innerHTML = ""
+        }
+    } else {
+        for (let i = 0; i <= filter.length; i++) {
+            resTitle[i + 1].innerHTML = ""
+            resAutor[i + 1].innerHTML = ""
+            resPrice[i + 1].innerHTML = ""
+            resTitle[i].innerHTML = " Title: " + filter[i].Title;
+            resAutor[i].innerHTML = " Autor: " + filter[i].Autor;
+            resPrice[i].innerHTML = " Price: " + filter[i].Price;
+        }
+    }
+
+}
+// Search by Autor
+function pressAutor() {
+    filter = books.sort((a, b) => a.Autor.localeCompare(b.Autor));
+    for (let i = 0; i <= filter.length; i++) {
+        resTitle[i + 1].innerHTML = ""
+        resAutor[i + 1].innerHTML = ""
+        resPrice[i + 1].innerHTML = ""
+        resTitle[i].innerHTML = " Title: " + filter[i].Title;
+        resAutor[i].innerHTML = " Autor: " + filter[i].Autor;
+        resPrice[i].innerHTML = " Price: " + filter[i].Price;
+    }
+}
+// Search by Price
+function PressPrice() {
+    filter = books.sort((a, b) => a.Price - b.Price);
+    for (let i = 0; i <= filter.length; i++) {
+        resTitle[i + 1].innerHTML = ""
+        resAutor[i + 1].innerHTML = ""
+        resPrice[i + 1].innerHTML = ""
+        resTitle[i].innerHTML = " Title: " + filter[i].Title;
+        resAutor[i].innerHTML = " Autor: " + filter[i].Autor;
+        resPrice[i].innerHTML = " Price: " + filter[i].Price;
+    }
+}
+// search by Title A-Z and Z-A
+function pressTitle(option) {
+    if (option === "A-Z") {
+        filter = books.sort((a, b) => a.Title.localeCompare(b.Title));
+    } else {
+        filter = books.sort((a, b) => b.Title.localeCompare(a.Title));
+    }
+    for (let i = 0; i <= filter.length; i++) {
+        resTitle[i + 1].innerHTML = ""
+        resAutor[i + 1].innerHTML = ""
+        resPrice[i + 1].innerHTML = ""
+        resTitle[i].innerHTML = " Title: " + filter[i].Title;
+        resAutor[i].innerHTML = " Autor: " + filter[i].Autor;
+        resPrice[i].innerHTML = " Price: " + filter[i].Price;
+    }
+}
