@@ -5,7 +5,16 @@
     display: flex;
     justify-content: space-evenly;
 }
-#res{
+#resTitle{
+    padding:10%;
+}
+#resAutor{
+    padding:10%;
+}
+#resPrice{
+    padding:10%;
+}
+.boxs{
     color:red;
     display: flex;
     flex-direction: column;
