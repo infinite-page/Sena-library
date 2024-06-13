@@ -427,7 +427,8 @@ if ( name !== null && cc !== null && email !== null && cellphone !== null) {
 
 })
 }
-      |||||||||||||||||||
+ 
+
 //card pay register//
 
 
