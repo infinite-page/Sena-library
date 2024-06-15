@@ -457,7 +457,8 @@ function register() {
 		let email = document.getElementById('email').value
 		let cellphone = document.getElementById('cellphone').value
 		let name = document.getElementById('name').value
-		if (name !== null && cc !== null && email !== null && cellphone !== null) {
+		let password = document.getElementById('password').value
+		if (name !== null && cc !== null && email !== null && cellphone !== null && password !== null) {
 			alert('Registro exitoso');
 		} else {
 			alert('Algo salio mal, intenta de Nuevo');
