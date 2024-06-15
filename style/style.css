@@ -284,6 +284,7 @@ nav .nav-link.active {
 .categorie-book > div > a > button:active{
 	background-color: var(--red);
 	color: var(--vanilla);
+	box-shadow: 0 0 20px var(--brown);
 }
 .categorie-book> div > a > button> img{
 	width: 30px;
