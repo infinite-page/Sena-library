@@ -1,10 +1,20 @@
+// dates //
+let actuallDate = new Date()
+let actuallMonth = actuallDate.getMonth();
+let actuallDay = actuallDate.getDay();
+const dayofbook1 = new Date("Jun 14, 2024 00:00:00");
+const dayofbook2 = new Date("Jun 16, 2024 00:00:00");
+let month1 = dayofbook1.getMonth();
+let day1 = dayofbook1.getDay();
+let month2 = dayofbook2.getMonth();
+let day2 = dayofbook2.getDay();
 
 //Miguel Angel Londoño//
 let books = [
 	{
 		Title: 'Little prince',
 		Author: 'Antoine de Saint-Exupéry',
-		Gender: 'literature',
+		Gender: 'Literature',
 		Language: 'English',
 		Price: 20000,
 		Format: 'ebook',
@@ -16,13 +26,12 @@ let books = [
 		Editorial: 'Reynal & Hitchcock',
 		Pages: 100,
 		Stock: 10,
-		Discount: 10000
 	},
 
 	{
 		Title: 'To kill a Monckingbird',
 		Author: 'Harper Lee',
-		Gender: 'literature',
+		Gender: 'Literature',
 		Language: 'English',
 		Price: 30000,
 		Format: 'ebook',
@@ -34,7 +43,6 @@ let books = [
 		Editorial: 'J. B. Lippincott & Co.',
 		Pages: 300,
 		Stock: 20,
-		Discount: 15000
 	},
 
 	{
@@ -52,7 +60,6 @@ let books = [
 		Editorial: 'Penguin Classics',
 		Pages: 368,
 		Stock: 5,
-		Discount: 15000
 	},
 
 	{
@@ -70,7 +77,6 @@ let books = [
 		Editorial: 'Bloomsbury Publishing',
 		Pages: 223,
 		Stock: 0,
-		Discount: 15000
 	},
 
 	{
@@ -88,7 +94,6 @@ let books = [
 		Editorial: 'Scribner',
 		Pages: 180,
 		Stock: 9,
-		Discount: 20000
 	},
 
 	{
@@ -106,7 +111,6 @@ let books = [
 		Editorial: 'Houghton Mifflin Harcourt',
 		Pages: 310,
 		Stock: 1,
-		Discount: 30000
 	},
 
 	{
@@ -124,7 +128,6 @@ let books = [
 		Editorial: 'Houghton Mifflin Harcourt',
 		Pages: 1178,
 		Stock: 17,
-		Discount: 15000
 	},
 
 	{
@@ -142,7 +145,6 @@ let books = [
 		Editorial: 'Penguin Classics',
 		Pages: 176,
 		Stock: 90,
-		Discount: 10000
 	},
 
 	{
@@ -160,7 +162,6 @@ let books = [
 		Editorial: 'Vintage Español',
 		Pages: 417,
 		Stock: 50,
-		Discount: 50000
 	},
 
 	{
@@ -178,7 +179,6 @@ let books = [
 		Editorial: 'HarperOne',
 		Pages: 208,
 		Stock: 100,
-		Discount: 10000
 	},
 
 	{
@@ -196,7 +196,6 @@ let books = [
 		Editorial: 'Little, Brown and Company',
 		Pages: 224,
 		Stock: 50,
-		Discount: 10000
 	},
 
 	{
@@ -214,7 +213,6 @@ let books = [
 		Editorial: 'Vintage Español',
 		Pages: 368,
 		Stock: 20,
-		Discount: 35000
 	},
 
 	{
@@ -232,7 +230,6 @@ let books = [
 		Editorial: 'Vintage Español',
 		Pages: 128,
 		Stock: 30,
-		Discount: 22500
 	},
 
 	{
@@ -250,7 +247,6 @@ let books = [
 		Editorial: 'Riverhead Books',
 		Pages: 320,
 		Stock: 15,
-		Discount: 43500
 	},
 
 	{
@@ -268,7 +264,6 @@ let books = [
 		Editorial: 'Farrar, Straus and Giroux',
 		Pages: 304,
 		Stock: 20,
-		Discount: 34500
 	},
 
 	{
@@ -286,7 +281,6 @@ let books = [
 		Editorial: 'Atria Books',
 		Pages: 496,
 		Stock: 10,
-		Discount: 19000
 	},
 
 	{
@@ -304,7 +298,6 @@ let books = [
 		Editorial: 'Cátedra',
 		Pages: 124,
 		Stock: 15,
-		Discount: 12500
 	},
 
 	{
@@ -322,7 +315,6 @@ let books = [
 		Editorial: 'Oxford University Press',
 		Pages: 256,
 		Stock: 0,
-		Discount: 27500
 	},
 
 	{
@@ -340,7 +332,6 @@ let books = [
 		Editorial: 'Pantheon Books',
 		Pages: 576,
 		Stock: 5,
-		Discount: 50000
 	},
 
 	{
@@ -358,10 +349,18 @@ let books = [
 		Editorial: 'Penguin Classics',
 		Pages: 272,
 		Stock: 10,
-		Discount: 15000
 	}
 ];
-function populateBooks(books) {
+if ((actuallMonth === month1 || actuallMonth === month2) && (actuallDay === day1 || actuallDay === day2)) {
+    for (let i = 0; i < books.length; i++) {
+        let descuento = books[i].Price*0.1;
+        books[i].Price = books[i].Price - descuento;
+    }
+}else{
+    console.log("not is the day of book, normal prices");
+}
+function Normalbooks() {
+	bookContainer.innerHTML= ""
 	const container = document.getElementById("bookContainer");
 	books.forEach((book) => {
 		const section = document.createElement("section");
@@ -421,33 +420,141 @@ function populateBooks(books) {
 	});
 }
 
+Normalbooks();
+
 function getImageName(title) {
 	const imageName = title.toLowerCase().replace(/[^a-z0-9- -ñ]+/g, '_');
 	return imageName;
 }
 
-// Call the function with your books array
-populateBooks(books);
-
-
-
 //// filter Price//
 function pressPrices30_80() {
-	const filterPrice30_80 = books.filter(books => books.Price >= 30000 && books.Price <= 80000)
-	return filterPrice30_80
+	bookContainer.innerHTML= ""
+	filter = books.filter(books => books.Price >= 30000 && books.Price <= 80000);
+	const container = document.getElementById("bookContainer");
+	filter.forEach((book) => {
+		const section = document.createElement("section");
+		section.classList.add("categorie-book");
+
+		const div = document.createElement("div");
+
+		const title = document.createElement("h2");
+		title.textContent = book.Title;
+		div.appendChild(title);
+
+		const img = document.createElement("img");
+		img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+		img.alt = book.Title;
+		div.appendChild(img);
+
+		const price = document.createElement("p");
+		price.textContent = `$${book.Price}`;
+		div.appendChild(price);
+
+		const author = document.createElement("p");
+		author.textContent = `Author: ${book.Author}`;
+		div.appendChild(author);
+
+		const genre = document.createElement("p");
+		genre.textContent = `Genre: ${book.Gender}`;
+		div.appendChild(genre);
+
+		const editorial = document.createElement("p");
+		editorial.textContent = `Editorial: ${book.Editorial}`;
+		div.appendChild(editorial);
+
+		const pages = document.createElement("p");
+		pages.textContent = `Pages: ${book.Pages}`;
+		div.appendChild(pages);
+
+		const stock = document.createElement("p");
+		stock.textContent = `Stock: ${book.Stock}`;
+		div.appendChild(stock);
+
+		const addToCartButton = document.createElement("a");
+		addToCartButton.href = "pages/sesion.html";
+		addToCartButton.innerHTML = `
+		<button>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<img src="assets/carro.png" alt="compra">
+		<p>Añadir al carrito</p>
+		</button>
+`;
+		div.appendChild(addToCartButton);
+
+		section.appendChild(div);
+		container.appendChild(section);
+	});
+
 }
 
-console.log(pressPrices30_80())
-
-
-/////filter Pages (there is somthing wrong(we dont know include the teacher))////
+/////filter for books with more of 200 Pages////
 
 function pressPages() {
-	return books.filter(book => book.Pages >= 200)
+	bookContainer.innerHTML = ""
+	filter = books.filter(book => book.Pages >= 200);
+	const container = document.getElementById("bookContainer");
+	filter.forEach((book) => {
+		const section = document.createElement("section");
+		section.classList.add("categorie-book");
+
+		const div = document.createElement("div");
+
+		const title = document.createElement("h2");
+		title.textContent = book.Title;
+		div.appendChild(title);
+
+		const img = document.createElement("img");
+		img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+		img.alt = book.Title;
+		div.appendChild(img);
+
+		const price = document.createElement("p");
+		price.textContent = `$${book.Price}`;
+		div.appendChild(price);
+
+		const author = document.createElement("p");
+		author.textContent = `Author: ${book.Author}`;
+		div.appendChild(author);
+
+		const genre = document.createElement("p");
+		genre.textContent = `Genre: ${book.Gender}`;
+		div.appendChild(genre);
+
+		const editorial = document.createElement("p");
+		editorial.textContent = `Editorial: ${book.Editorial}`;
+		div.appendChild(editorial);
+
+		const pages = document.createElement("p");
+		pages.textContent = `Pages: ${book.Pages}`;
+		div.appendChild(pages);
+
+		const stock = document.createElement("p");
+		stock.textContent = `Stock: ${book.Stock}`;
+		div.appendChild(stock);
+
+		const addToCartButton = document.createElement("a");
+		addToCartButton.href = "pages/sesion.html";
+		addToCartButton.innerHTML = `
+		<button>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<img src="assets/carro.png" alt="compra">
+		<p>Añadir al carrito</p>
+		</button>
+`;
+		div.appendChild(addToCartButton);
+
+		section.appendChild(div);
+		container.appendChild(section);
+	});
+
 }
-console.log(pressPages())
-
-
 ////register////
 
 function register() {
@@ -468,8 +575,6 @@ function register() {
 
 
 //card pay register//
-
-
 function cardPayRegister() {
 	document.getElementById('cardRegister').addEventListener('submit', function (event) {
 		event.preventDefault();
@@ -485,35 +590,65 @@ function cardPayRegister() {
 // Amount of Stock
 
 function pressStock() {
-	return filterStock = books.sort((a, b) => a.Stock - b.Stock);
-}
-console.table(pressStock())
+	bookContainer.innerHTML = ""
+	filter = books.sort((a, b) => b.Stock - a.Stock);
+	const container = document.getElementById("bookContainer");
+	filter.forEach((book) => {
+		const section = document.createElement("section");
+		section.classList.add("categorie-book");
 
+		const div = document.createElement("div");
 
-//////reabte day//////
+		const title = document.createElement("h2");
+		title.textContent = book.Title;
+		div.appendChild(title);
 
-const date = new Date()
-console.log("Fecha actual:", date)
-const currentMonth = date.getMonth()
-const currentDay = date.getDate()
+		const img = document.createElement("img");
+		img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+		img.alt = book.Title;
+		div.appendChild(img);
 
-if (currentMonth === 8 && currentDay === 24) {
-	console.log("¡Hoy es día de rebajas! ¡Infinite Page te desea un feliz dia del lector")
-	console.log('Los descuentos de el dia de hoy son del 50%')
+		const price = document.createElement("p");
+		price.textContent = `$${book.Price}`;
+		div.appendChild(price);
 
+		const author = document.createElement("p");
+		author.textContent = `Author: ${book.Author}`;
+		div.appendChild(author);
 
-	const rebateDay = books.filter(book => book.Discount > 0)
-	console.log("Books with Discount:", books.Title);
+		const genre = document.createElement("p");
+		genre.textContent = `Genre: ${book.Gender}`;
+		div.appendChild(genre);
 
-	const DiscountedBooks = rebateDay.map(book => ({
-		Title: book.Title,
-		Price: (book.Price - book.Discount)
-	}))
+		const editorial = document.createElement("p");
+		editorial.textContent = `Editorial: ${book.Editorial}`;
+		div.appendChild(editorial);
 
-	console.log("Discounted books:", DiscountedBooks)
+		const pages = document.createElement("p");
+		pages.textContent = `Pages: ${book.Pages}`;
+		div.appendChild(pages);
 
-} else {
-	console.log("No es día de rebaja")
+		const stock = document.createElement("p");
+		stock.textContent = `Stock: ${book.Stock}`;
+		div.appendChild(stock);
+
+		const addToCartButton = document.createElement("a");
+		addToCartButton.href = "pages/sesion.html";
+		addToCartButton.innerHTML = `
+		<button>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<img src="assets/carro.png" alt="compra">
+		<p>Añadir al carrito</p>
+		</button>
+`;
+		div.appendChild(addToCartButton);
+
+		section.appendChild(div);
+		container.appendChild(section);
+	});
 }
 
 // Kevin
@@ -552,111 +687,441 @@ function pressAmount(operation, i) {
 			break;
 	}
 }
-// Functions to search by availability-Editorial-Language
-function pressAvailability() {
-	filter = books.sort((a, b) => b.Availability.localeCompare(a.Availability));
-	for (let i = 0; i < filter.length; i++) {
-		for (let i = 0; i <= filter.length; i++) {
-			Title[i + 1] = ""
-			Author[i + 1] = ""
-			Price[i + 1] = ""
-			Title[i] = " Title: " + filter[i].Title;
-			Author[i] = " Author: " + filter[i].Author;
-			Price[i] = " Price: " + filter[i].Price;
-		}
-	}
-}
+// Functions to search by Editorial-Language
 function pressLanguage() {
+	bookContainer.innerHTML= ""
 	filter = books.sort((a, b) => a.Language.localeCompare(b.Language));
-	for (let i = 0; i <= filter.length; i++) {
-		Title[i + 1] = ""
-		Author[i + 1] = ""
-		Price[i + 1] = ""
-		Title[i] = " Title: " + filter[i].Title;
-		Author[i] = " Author: " + filter[i].Author;
-		Price[i] = " Price: " + filter[i].Price;
-	}
+	const container = document.getElementById("bookContainer");
+	filter.forEach((book) => {
+	const section = document.createElement("section");
+	section.classList.add("categorie-book");
+
+	const div = document.createElement("div");
+
+	const title = document.createElement("h2");
+	title.textContent = book.Title;
+	div.appendChild(title);
+
+	const img = document.createElement("img");
+	img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+	img.alt = book.Title;
+	div.appendChild(img);
+
+	const price = document.createElement("p");
+	price.textContent = `$${book.Price}`;
+	div.appendChild(price);
+
+	const author = document.createElement("p");
+	author.textContent = `Author: ${book.Author}`;
+	div.appendChild(author);
+
+	const genre = document.createElement("p");
+	genre.textContent = `Genre: ${book.Gender}`;
+	div.appendChild(genre);
+
+	const editorial = document.createElement("p");
+	editorial.textContent = `Editorial: ${book.Editorial}`;
+	div.appendChild(editorial);
+
+	const pages = document.createElement("p");
+	pages.textContent = `Pages: ${book.Pages}`;
+	div.appendChild(pages);
+
+	const stock = document.createElement("p");
+	stock.textContent = `Stock: ${book.Stock}`;
+	div.appendChild(stock);
+
+	const addToCartButton = document.createElement("a");
+	addToCartButton.href = "pages/sesion.html";
+	addToCartButton.innerHTML = `
+	<button>
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	<img src="assets/carro.png" alt="compra">
+	<p>Añadir al carrito</p>
+	</button>
+`;
+	div.appendChild(addToCartButton);
+
+	section.appendChild(div);
+	container.appendChild(section);
+});
 }
 function pressEditorial() {
+	bookContainer.innerHTML = ""
 	filter = books.sort((a, b) => a.Editorial.localeCompare(b.Editorial));
-	for (let i = 0; i <= filter.length; i++) {
-		Title[i + 1] = ""
-		Author[i + 1] = ""
-		Price[i + 1] = ""
-		Title[i] = " Title: " + filter[i].Title;
-		Author[i] = " Author: " + filter[i].Author;
-		Price[i] = " Price: " + filter[i].Price;
-	}
+	const container = document.getElementById("bookContainer");
+	filter.forEach((book) => {
+	const section = document.createElement("section");
+	section.classList.add("categorie-book");
+
+	const div = document.createElement("div");
+
+	const title = document.createElement("h2");
+	title.textContent = book.Title;
+	div.appendChild(title);
+
+	const img = document.createElement("img");
+	img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+	img.alt = book.Title;
+	div.appendChild(img);
+
+	const price = document.createElement("p");
+	price.textContent = `$${book.Price}`;
+	div.appendChild(price);
+
+	const author = document.createElement("p");
+	author.textContent = `Author: ${book.Author}`;
+	div.appendChild(author);
+
+	const genre = document.createElement("p");
+	genre.textContent = `Genre: ${book.Gender}`;
+	div.appendChild(genre);
+
+	const editorial = document.createElement("p");
+	editorial.textContent = `Editorial: ${book.Editorial}`;
+	div.appendChild(editorial);
+
+	const pages = document.createElement("p");
+	pages.textContent = `Pages: ${book.Pages}`;
+	div.appendChild(pages);
+
+	const stock = document.createElement("p");
+	stock.textContent = `Stock: ${book.Stock}`;
+	div.appendChild(stock);
+
+	const addToCartButton = document.createElement("a");
+	addToCartButton.href = "pages/sesion.html";
+	addToCartButton.innerHTML = `
+	<button>
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	<img src="assets/carro.png" alt="compra">
+	<p>Añadir al carrito</p>
+	</button>
+`;
+	div.appendChild(addToCartButton);
+
+	section.appendChild(div);
+	container.appendChild(section);
+});
 }
 // Search by Gender
 function pressGender(GenderOptions) {
+	bookContainer.innerHTML = ""
 	filter = books.filter((a) => a.Gender === GenderOptions);
 	if (filter.length === 0) {
-		for (let i = 0; i <= filter.length + i; i++) {
-			Title[i + 1] = ""
-			Author[i + 1] = ""
-			Price[i + 1] = ""
-			Title[0] = "not books found"
-			Author[i] = ""
-			Price[i] = ""
-		}
+			const container = document.getElementById("bookContainer");
+			container.innerHTML = "NOT BOOKS FOUND";
 	} else {
-		for (let i = 0; i <= filter.length; i++) {
-			Title[i + 1] = ""
-			Author[i + 1] = ""
-			Price[i + 1] = ""
-			Title[i] = " Title: " + filter[i].Title;
-			Author[i] = " Author: " + filter[i].Author;
-			Price[i] = " Price: " + filter[i].Price;
-		}
+		const container = document.getElementById("bookContainer");
+		filter.forEach((book) => {
+			const section = document.createElement("section");
+			section.classList.add("categorie-book");
+	
+			const div = document.createElement("div");
+	
+			const title = document.createElement("h2");
+			title.textContent = book.Title;
+			div.appendChild(title);
+	
+			const img = document.createElement("img");
+			img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+			img.alt = book.Title;
+			div.appendChild(img);
+	
+			const price = document.createElement("p");
+			price.textContent = `$${book.Price}`;
+			div.appendChild(price);
+	
+			const author = document.createElement("p");
+			author.textContent = `Author: ${book.Author}`;
+			div.appendChild(author);
+	
+			const genre = document.createElement("p");
+			genre.textContent = `Genre: ${book.Gender}`;
+			div.appendChild(genre);
+	
+			const editorial = document.createElement("p");
+			editorial.textContent = `Editorial: ${book.Editorial}`;
+			div.appendChild(editorial);
+	
+			const pages = document.createElement("p");
+			pages.textContent = `Pages: ${book.Pages}`;
+			div.appendChild(pages);
+	
+			const stock = document.createElement("p");
+			stock.textContent = `Stock: ${book.Stock}`;
+			div.appendChild(stock);
+	
+			const addToCartButton = document.createElement("a");
+			addToCartButton.href = "pages/sesion.html";
+			addToCartButton.innerHTML = `
+			<button>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<img src="assets/carro.png" alt="compra">
+			<p>Añadir al carrito</p>
+			</button>
+	`;
+			div.appendChild(addToCartButton);
+	
+			section.appendChild(div);
+			container.appendChild(section);
+		});
 	}
 
 }
 // Search by Author
 function pressAuthor() {
+	bookContainer.innerHTML= ""
 	filter = books.sort((a, b) => a.Author.localeCompare(b.Author));
-	for (let i = 0; i <= filter.length; i++) {
-		Title[i + 1] = ""
-		Author[i + 1] = ""
-		Price[i + 1] = ""
-		Title[i] = " Title: " + filter[i].Title;
-		Author[i] = " Author: " + filter[i].Author;
-		Price[i] = " Price: " + filter[i].Price;
-	}
+	const container = document.getElementById("bookContainer");
+	filter.forEach((book) => {
+		const section = document.createElement("section");
+		section.classList.add("categorie-book");
+
+		const div = document.createElement("div");
+
+		const title = document.createElement("h2");
+		title.textContent = book.Title;
+		div.appendChild(title);
+
+		const img = document.createElement("img");
+		img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+		img.alt = book.Title;
+		div.appendChild(img);
+
+		const price = document.createElement("p");
+		price.textContent = `$${book.Price}`;
+		div.appendChild(price);
+
+		const author = document.createElement("p");
+		author.textContent = `Author: ${book.Author}`;
+		div.appendChild(author);
+
+		const genre = document.createElement("p");
+		genre.textContent = `Genre: ${book.Gender}`;
+		div.appendChild(genre);
+
+		const editorial = document.createElement("p");
+		editorial.textContent = `Editorial: ${book.Editorial}`;
+		div.appendChild(editorial);
+
+		const pages = document.createElement("p");
+		pages.textContent = `Pages: ${book.Pages}`;
+		div.appendChild(pages);
+
+		const stock = document.createElement("p");
+		stock.textContent = `Stock: ${book.Stock}`;
+		div.appendChild(stock);
+
+		const addToCartButton = document.createElement("a");
+		addToCartButton.href = "pages/sesion.html";
+		addToCartButton.innerHTML = `
+		<button>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<img src="assets/carro.png" alt="compra">
+		<p>Añadir al carrito</p>
+		</button>
+`;
+		div.appendChild(addToCartButton);
+
+		section.appendChild(div);
+		container.appendChild(section);
+	});
 }
 // Search by Price
 function PressPrice() {
+	bookContainer.innerHTML= ""
 	filter = books.sort((a, b) => a.Price - b.Price);
-	for (let i = 0; i <= filter.length; i++) {
-		Title[i + 1] = ""
-		Author[i + 1] = ""
-		Price[i + 1] = ""
-		Title[i] = " Title: " + filter[i].Title;
-		Author[i] = " Author: " + filter[i].Author;
-		Price[i] = " Price: " + filter[i].Price;
-	}
+	const container = document.getElementById("bookContainer");
+	filter.forEach((book) => {
+		const section = document.createElement("section");
+		section.classList.add("categorie-book");
+
+		const div = document.createElement("div");
+
+		const title = document.createElement("h2");
+		title.textContent = book.Title;
+		div.appendChild(title);
+
+		const img = document.createElement("img");
+		img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+		img.alt = book.Title;
+		div.appendChild(img);
+
+		const price = document.createElement("p");
+		price.textContent = `$${book.Price}`;
+		div.appendChild(price);
+
+		const author = document.createElement("p");
+		author.textContent = `Author: ${book.Author}`;
+		div.appendChild(author);
+
+		const genre = document.createElement("p");
+		genre.textContent = `Genre: ${book.Gender}`;
+		div.appendChild(genre);
+
+		const editorial = document.createElement("p");
+		editorial.textContent = `Editorial: ${book.Editorial}`;
+		div.appendChild(editorial);
+
+		const pages = document.createElement("p");
+		pages.textContent = `Pages: ${book.Pages}`;
+		div.appendChild(pages);
+
+		const stock = document.createElement("p");
+		stock.textContent = `Stock: ${book.Stock}`;
+		div.appendChild(stock);
+
+		const addToCartButton = document.createElement("a");
+		addToCartButton.href = "pages/sesion.html";
+		addToCartButton.innerHTML = `
+		<button>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<img src="assets/carro.png" alt="compra">
+		<p>Añadir al carrito</p>
+		</button>
+`;
+		div.appendChild(addToCartButton);
+
+		section.appendChild(div);
+		container.appendChild(section);
+	});
 }
 // search by Title A-Z and Z-A
 function filterTitlesAZ() {
-	const booksAZ = books.sort((a, b) => a.Title.localeCompare(b.Title));
-	const filteredBooks = [];
+	bookContainer.innerHTML = ""
+	filter = books.sort((a, b) => a.Title.localeCompare(b.Title));
+	const container = document.getElementById("bookContainer");
+	filter.forEach((book) => {
+	const section = document.createElement("section");
+	section.classList.add("categorie-book");
 
-	for (let i = 0; i < 26; i++) {
-		const letter = String.fromCharCode(97 + i);
-		const booksStartingWithLetter = booksAZ.filter(book => book.Title.startsWith(letter));
-		filteredBooks.push(...booksStartingWithLetter);
-	}
-	return filteredBooks;
+	const div = document.createElement("div");
+
+	const title = document.createElement("h2");
+	title.textContent = book.Title;
+	div.appendChild(title);
+
+	const img = document.createElement("img");
+	img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+	img.alt = book.Title;
+	div.appendChild(img);
+
+	const price = document.createElement("p");
+	price.textContent = `$${book.Price}`;
+	div.appendChild(price);
+
+	const author = document.createElement("p");
+	author.textContent = `Author: ${book.Author}`;
+	div.appendChild(author);
+
+	const genre = document.createElement("p");
+	genre.textContent = `Genre: ${book.Gender}`;
+	div.appendChild(genre);
+
+	const editorial = document.createElement("p");
+	editorial.textContent = `Editorial: ${book.Editorial}`;
+	div.appendChild(editorial);
+
+	const pages = document.createElement("p");
+	pages.textContent = `Pages: ${book.Pages}`;
+	div.appendChild(pages);
+
+	const stock = document.createElement("p");
+	stock.textContent = `Stock: ${book.Stock}`;
+	div.appendChild(stock);
+
+	const addToCartButton = document.createElement("a");
+	addToCartButton.href = "pages/sesion.html";
+	addToCartButton.innerHTML = `
+	<button>
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	<img src="assets/carro.png" alt="compra">
+	<p>Añadir al carrito</p>
+	</button>
+`;
+	div.appendChild(addToCartButton);
+
+	section.appendChild(div);
+	container.appendChild(section);
+});
 }
 function filterTitlesZA() {
-	const booksZA = books.sort((a, b) => b.Title.localeCompare(a.Title));
-	const filteredBooks = [];
+	bookContainer.innerHTML = ""
+	filter = books.sort((a, b) => b.Title.localeCompare(a.Title));
+	const container = document.getElementById("bookContainer");
+	filter.forEach((book) => {
+	const section = document.createElement("section");
+	section.classList.add("categorie-book");
 
-	for (let i = 25; i >= 0; i--) {
-		const letter = String.fromCharCode(97 + i);
-		const booksStartingWithLetter = booksZA.filter(book => book.Title.startsWith(letter));
-		filteredBooks.push(...booksStartingWithLetter);
-	}
+	const div = document.createElement("div");
 
-	return filteredBooks;
+	const title = document.createElement("h2");
+	title.textContent = book.Title;
+	div.appendChild(title);
+
+	const img = document.createElement("img");
+	img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+	img.alt = book.Title;
+	div.appendChild(img);
+
+	const price = document.createElement("p");
+	price.textContent = `$${book.Price}`;
+	div.appendChild(price);
+
+	const author = document.createElement("p");
+	author.textContent = `Author: ${book.Author}`;
+	div.appendChild(author);
+
+	const genre = document.createElement("p");
+	genre.textContent = `Genre: ${book.Gender}`;
+	div.appendChild(genre);
+
+	const editorial = document.createElement("p");
+	editorial.textContent = `Editorial: ${book.Editorial}`;
+	div.appendChild(editorial);
+
+	const pages = document.createElement("p");
+	pages.textContent = `Pages: ${book.Pages}`;
+	div.appendChild(pages);
+
+	const stock = document.createElement("p");
+	stock.textContent = `Stock: ${book.Stock}`;
+	div.appendChild(stock);
+
+	const addToCartButton = document.createElement("a");
+	addToCartButton.href = "pages/sesion.html";
+	addToCartButton.innerHTML = `
+	<button>
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	<img src="assets/carro.png" alt="compra">
+	<p>Añadir al carrito</p>
+	</button>
+`;
+	div.appendChild(addToCartButton);
+
+	section.appendChild(div);
+	container.appendChild(section);
+});
 }

@@ -58,17 +58,16 @@
 								<button onclick="filterTitlesZA()">
 									<img src="assets/za.png" alt="Z-A">
 								</button>
-									<button class="c-word-description"><h1>Disponibilidad</h1></button>
-									<button class="c-word-description"><h1>Idioma</h1></button>
-									<button class="c-word-description"><h1>Editorial</h1></button>
-									<button class="c-word-description"><h1>Título</h1></button>
-									<button class="c-word-description"><h1>Autor</h1></button>
+									<button class="c-word-description" onclick="pressStock()"><h1>Disponibilidad</h1></button>
+									<button class="c-word-description" onclick="pressLanguage()"><h1>Idioma</h1></button>
+									<button class="c-word-description" onclick="pressEditorial()"><h1>Editorial</h1></button>
+									<button class="c-word-description" onclick="pressAuthor()"><h1>Autor</h1></button>
 									<button class="c-word-description" onclick="PressPrice()"><h1>Precio</h1></button>
-										<button>
+										<button onclick="pressPrices30_80()">
 											<h1>Más costosos</h1>
 											<img src="assets/dolar.png" alt="Price">
 										</button>
-												<button>
+												<button onclick="pressPages()">
 													<h1>Más de 200 Paginas</h1>
 													<img src="assets/superior.png" alt="arriba de 200">
 												</button>
@@ -76,16 +75,16 @@
 					
 				</div>
 					<div class="categories_words">
-						<button class="c-word">fiction</button>
-						<button class="c-word">magical realism</button>
-						<button class="c-word">historical</button>
-						<button class="c-word">mystery</button>
-						<button class="c-word">romance</button>
-						<button class="c-word">literature</button>
-						<button class="c-word">epic</button>
-						<button class="c-word">adventure</button>
-						<button class="c-word">tragedy</button>
-						<button class="c-word">fantasy</button>
+						<button class="c-word" onclick="pressGender('Fiction')">fiction</button>
+						<button class="c-word" onclick="pressGender('Magical Realism')">magical realism</button>
+						<button class="c-word" onclick="pressGender('Historical')">historical</button>
+						<button class="c-word" onclick="pressGender('Mystery')">mystery</button>
+						<button class="c-word" onclick="pressGender('Romance')">romance</button>
+						<button class="c-word" onclick="pressGender('Literature')">literature</button>
+						<button class="c-word" onclick="pressGender('Epic')">epic</button>
+						<button class="c-word" onclick="pressGender('Adventure')">adventure</button>
+						<button class="c-word" onclick="pressGender('Tragedy')">tragedy</button>
+						<button class="c-word" onclick="pressGender('Fantasy')">fantasy</button>
 					</div>
 			</section>
 			<section class="descriptions" id='bookContainer'>
