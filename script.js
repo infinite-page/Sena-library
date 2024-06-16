@@ -1,3 +1,13 @@
+let actuallDate = new Date()
+let actuallMonth = actuallDate.getMonth();
+let actuallDay = actuallDate.getDay();
+const dayofbook1 = new Date("Jun 14, 2024 00:00:00");
+const dayofbook2 = new Date("Jun 16, 2024 00:00:00");
+let month1 = dayofbook1.getMonth();
+let day1 = dayofbook1.getDay();
+let month2 = dayofbook2.getMonth();
+let day2 = dayofbook2.getDay();
+
 let books = [
     { id: 0,
     Title: "ana",
@@ -47,8 +57,19 @@ let books = [
     Genre:"Literature", 
     Autor:"xoka", 
     Price:20000,
-    Stock:1} 
+    Stock:1}
 ]
+if ((actuallMonth === month1 || actuallMonth === month2) && (actuallDay === day1 || actuallDay === day2)) {
+    for (let i = 0; i < books.length; i++) {
+        let descuento = books[i].Price*0.1;
+        books[i].Price = books[i].Price - descuento;
+    }
+    console.log(books);
+}else{
+    console.log("not is the day of book, normal prices");
+}
+
+
 // Select Book for modify Stock
 function selectBook(i){
     if(!isNaN(i)) {
