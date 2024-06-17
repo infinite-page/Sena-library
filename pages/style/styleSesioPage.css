@@ -1,0 +1,138 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: cursive;
+}
+::selection{
+	background: crimson;
+	color: var(--vanilla);
+}
+:root{
+	--blue: rgb(158, 173, 200);
+	--gray: rgb(56, 95, 113);
+	--red: rgb(134, 13, 47);
+	--darkRed: #3c0615;
+	--ultradark: rgb(21,7,9);
+	--vanilla: rgb(244, 238, 169);
+	--vanillaTransparent: rgba(244, 238, 169, 0.582);
+	--brown: #7c3b1a;
+	--brownTransparent: #7c3b1a9c;
+}
+button{
+	background-color: var(--darkRed);
+	position: relative;
+	padding: 8px 15px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	overflow: hidden;
+	color: var(--vanillaTransparent);
+	font-weight: lighter;
+	font-size: 17px;
+}
+.data > .continue > a > button{
+	margin: 0 25px;
+	margin-top: 3%;
+}
+.data > .login-register{
+	display: flex;
+	align-items: center;
+}
+.data > .login-register > a > button{
+	margin-top: 0;
+}
+button:active{
+	background-color: var(--red);
+	box-shadow: 0 0 20px var(--vanilla);
+	transform: scale(.97);
+}
+button span{
+	position: absolute;
+	background-color: var(--vanilla);
+	transition: .7s;
+}
+button:active span{
+	background-color: var(--red);
+}
+button span:nth-child(1){
+	width: 100%;
+	height: 1.5px;
+	top: 0;
+	left: -100%;
+}
+button span:nth-child(2){
+	width: 100%;
+	height: 1.5px;
+	bottom: 0;
+	right: -100%;
+}
+button span:nth-child(3){
+	height: 100%;
+	width: 1.5px;
+	bottom: -100%;
+	left: 0;
+}
+button span:nth-child(4){
+	height: 100%;
+	width: 1.5px;
+	top: -100%;
+	right: 0;
+}
+button:hover span:nth-child(1){
+	left: 0;
+}
+button:hover span:nth-child(2){
+	right: 0;
+}
+button:hover span:nth-child(3){
+	bottom: 0;
+}
+button:hover span:nth-child(4){
+	top: 0;
+}
+main{
+	background: url('/assets/sesion.jpg');
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.login{
+	margin: 10px 0;
+}
+.data{
+	background-color: var(--brownTransparent);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+	border-radius: 10px;
+	box-shadow: 0 0 100px var(--blue);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 5% 2%;
+	color: var(--vanilla);
+}
+.CC{
+	margin-top: 2%;
+}
+input{
+	background-color: transparent;
+	border-radius: 5px;
+	padding: 3%;
+	margin-bottom: 9%;
+	margin-top: 2%;
+	color: var(--vanilla);
+	border-color: var(--vanilla);
+	outline: none;
+	transition: .4s;
+}
+input:focus{
+	border-color: var(--red);
+}
+input::placeholder{
+	color: var(--vanillaTransparent);
+}

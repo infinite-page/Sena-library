@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="assets/Favicon/library-icon-png-20.png" type="image/x-icon" class="fav">
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/FontAwesome/fontawesome-free-6.5.2-web/css/all.css">
+	<title>Sena Library</title>
+</head>
+<body>
+	<header>
+		<section class="logo_h1">
+			<img src="assets/logoSena.png" alt="Logo sena" id="logo_sena">
+				<div id="search_head">
+					<h1 id="h1_head">Buscar Libros</h1>
+						<div>
+							<input type="text" id="input_head" placeholder="🔎Buscar...">
+							<button id="searchButton">
+								<img src="assets/magnifying-glass.png" alt="Search">
+							</button>
+						</div>
+						
+				</div>
+		</section>
+			<section class="nav_sect">
+				<nav id="nav_id">
+					<a class="nav-link" href="#start">Inicio</a>
+					<a class="nav-link" href="#categories">Libros</a>
+					<button onclick="addBook()">Añadir Libro</button>
+				</nav>
+	</header>
+	<main>
+		<img src="assets/book-float.gif" alt="book" id="book">
+		<!-- Section #1 -->
+		<section class="section_one" id="start">
+			<div>
+				<h1 id="h1_section1">LIBRERÍA DEL SENA</h1>
+			</div>
+			<div>
+				<p id="p_section1">Explora nuestra extensa colección de libros de todos los géneros, desde clásicos atemporales hasta los últimos éxitos.</p>
+			</div>
+				<a href="pages/sesion.html">
+					<button id="btn_section1">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+							Únete
+					</button>
+				</a>
+				
+		</section>
+		<!-- Section #2 -->
+		<section class="categories" id="categories">
+			<section class="organizer">
+				<div class="categories_words">
+					<div>
+						<h1>Categorias</h1>
+					</div>
+						<section>
+						<button onclick="filterTitlesAZ()">
+							<img src="assets/az.png" alt="A-Z" >
+						</button>
+							<button onclick="filterTitlesZA()">
+								<img src="assets/za.png" alt="Z-A">
+							</button>
+								<button class="c-word-description" onclick="Normalbooks()"><h1>All</h1></button>
+								<button class="c-word-description" onclick="pressStock()"><h1>Disponibilidad</h1></button>
+								<button class="c-word-description" onclick="pressLanguage()"><h1>Idioma</h1></button>
+								<button class="c-word-description" onclick="pressEditorial()"><h1>Editorial</h1></button>
+								<button class="c-word-description" onclick="pressAuthor()"><h1>Autor</h1></button>
+								<button class="c-word-description" onclick="PressPrice()"><h1>Precio</h1></button>
+									<button onclick="pressPrices30_80()"><h1>$30k-$80k</h1></button>
+										<button onclick="mostExpensive()">
+											<h1>Más caros</h1>
+											<img src="assets/dolar.png" alt="Price">
+										</button>
+											<button onclick="pressPages()">
+												<h1>Más de 200 Paginas</h1>
+												<img src="assets/superior.png" alt="arriba de 200">
+											</button>
+						</section>
+					
+				</div>
+					<div class="categories_words">
+						<button class="c-word" onclick="pressGender('Fiction')">fiction</button>
+						<button class="c-word" onclick="pressGender('Magical Realism')">magical realism</button>
+						<button class="c-word" onclick="pressGender('Historical')">historical</button>
+						<button class="c-word" onclick="pressGender('Mystery')">mystery</button>
+						<button class="c-word" onclick="pressGender('Romance')">romance</button>
+						<button class="c-word" onclick="pressGender('Literature')">literature</button>
+						<button class="c-word" onclick="pressGender('Epic')">epic</button>
+						<button class="c-word" onclick="pressGender('Adventure')">adventure</button>
+						<button class="c-word" onclick="pressGender('Tragedy')">tragedy</button>
+						<button class="c-word" onclick="pressGender('Fantasy')">fantasy</button>
+					</div>
+			</section>
+			<section class="descriptions" id='bookContainer'>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+				<section class="categorie-book">
+					
+				</section>
+			</section>
+		</section>
+			<footer>
+				<div>
+					<p>Copyright JJMN ©2024</p>
+				</div>
+			</footer>
+	</main>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="js/nav/scripts_nav.js"></script>
+			<script src="js/script.js"></script>
+</html>
