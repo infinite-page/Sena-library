@@ -11,7 +11,7 @@
 	--blue: rgb(158, 173, 200);
 	--gray: rgb(56, 95, 113);
 	--red: rgb(134, 13, 47);
-	--darkRed: rgb(60, 6, 21);
+	--darkRed: #3c0615;
 	--ultradark: rgb(21,7,9);
 	--vanilla: rgb(244, 238, 169);
 	--vanillaTransparent: rgba(244, 238, 169, 0.582);
@@ -39,7 +39,7 @@ button:active{
 }
 button span{
 	position: absolute;
-	background-color: var(--brown);
+	background-color: var(--vanilla);
 	transition: .7s;
 }
 button:active span{
@@ -83,6 +83,7 @@ button:hover span:nth-child(4){
 }
 main{
 	background: url('/assets/sesion.jpg');
+	background-position: center;
 	background-size: cover;
 	width: 100%;
 	height: 100vh;
