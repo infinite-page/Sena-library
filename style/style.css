@@ -11,9 +11,9 @@
 	--blue: rgb(158, 173, 200);
 	--gray: rgb(56, 95, 113);
 	--red: rgb(134, 13, 48);
-	--redTransparent: rgba(134, 13, 47, 0.555);
+	--redTransparent: rgba(134, 13, 47, 0.658);
 	--darkRed: rgb(60, 6, 21);
-	--darkRedTransparent: rgba(112, 0, 32, 0.566);
+	--darkRedTransparent: rgba(87, 0, 25, 0.637);
 	--ultradark: rgb(21,7,9);
 	--vanilla: rgb(244, 238, 169);
 	--vanillaTransparent: rgba(244, 238, 169, 0.582);
@@ -104,21 +104,27 @@ header{
 	border-radius: 0 0 10px 10px;
 	z-index: 100;
 }
-header div{
+header div, header > .logo_h1 > #search_head > div{
 	display: flex;
 	flex-direction: row;
 }
 .logo_h1{
 	display: flex;
 	justify-content: space-around;
-	width: 10%;
+	width: 25%;
+	flex-direction: row;
 }
 #logo_sena{
-	width: 7vh;
+	width: 15%;
+	height: 15%;
 }
 #search_head{
 	display: flex;
 	flex-direction: column;
+}
+#searchButton{
+	margin: 0;
+	background-color: transparent;
 }
 #input_head{
 	border-top: none;
@@ -275,6 +281,11 @@ nav .nav-link.active {
 	flex-direction: column;
 	align-items: center;
 	margin: 20px 0;
+}
+#deleta_id{
+	font-size: 25px;
+	padding: 10px;
+	cursor: pointer;
 }
 .categorie-book > div > img{
 	width: 200px;

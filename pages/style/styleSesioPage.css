@@ -24,13 +24,22 @@ button{
 	padding: 8px 15px;
 	border: none;
 	outline: none;
-	margin: 0 100px;
-	margin-top: 3%;
 	cursor: pointer;
 	overflow: hidden;
 	color: var(--vanillaTransparent);
 	font-weight: lighter;
 	font-size: 17px;
+}
+.data > .continue > a > button{
+	margin: 0 25px;
+	margin-top: 3%;
+}
+.data > .login-register{
+	display: flex;
+	align-items: center;
+}
+.data > .login-register > a > button{
+	margin-top: 0;
 }
 button:active{
 	background-color: var(--red);
@@ -91,6 +100,9 @@ main{
 	justify-content: center;
 	align-items: center;
 }
+.login{
+	margin: 10px 0;
+}
 .data{
 	background-color: var(--brownTransparent);
 	-webkit-backdrop-filter: blur(4px);
@@ -103,6 +115,9 @@ main{
 	flex-direction: column;
 	padding: 5% 2%;
 	color: var(--vanilla);
+}
+.CC{
+	margin-top: 2%;
 }
 input{
 	background-color: transparent;
