@@ -20,7 +20,7 @@ let books = [
 		Format: 'ebook',
 		Isbn: '9109109',
 		Description: 'is a timeless tale about a young prince who explores the universe, learning profound lessons about love, friendship, and the human condition along the way',
-		Status: 'new',
+		Status: 'New',
 		Location: 'Sena Comercio y Turismo',
 		Publicatio_day: 'April 6, 1943',
 		Editorial: 'Reynal & Hitchcock',
@@ -37,7 +37,7 @@ let books = [
 		Format: 'ebook',
 		Isbn: '9780451524935',
 		Description: 'A classic novel set in the American South, exploring themes of racial injustice and moral growth through the eyes of a young girl',
-		Status: 'new',
+		Status: 'New',
 		Location: 'Sena Comercio y Turismo',
 		Publicatio_day: 'AJuly 11, 1960',
 		Editorial: 'J. B. Lippincott & Co.',
@@ -54,7 +54,7 @@ let books = [
 		Format: 'ebook',
 		Isbn: '9780141439518',
 		Description: 'A witty and charming novel following the romantic entanglements of the Bennet sisters in early 19th-century England',
-		Status: 'new',
+		Status: 'New',
 		Location: 'Sena Comercio y Turismo',
 		Publicatio_day: 'January 28, 1813',
 		Editorial: 'Penguin Classics',
@@ -71,7 +71,7 @@ let books = [
 		Format: 'ebook',
 		Isbn: '9780747532743',
 		Description: 'The first book in the beloved series follows young Harry Potter as he discovers his magical heritage and begins his journey at Hogwarts School of Witchcraft and Wizardry',
-		Status: 'new',
+		Status: 'New',
 		Location: 'Sena Comercio y Turismo',
 		Publicatio_day: 'June 26, 1997',
 		Editorial: 'Bloomsbury Publishing',
@@ -88,7 +88,7 @@ let books = [
 		Format: 'ebook',
 		Isbn: '9780743273565',
 		Description: 'A mesmerizing tale of love, wealth, and ambition set against the backdrop of the Roaring Twenties in America.',
-		Status: 'new',
+		Status: 'New',
 		Location: 'Sena Comercio y Turismo',
 		Publicatio_day: 'April 10, 1925',
 		Editorial: 'Scribner',
@@ -121,7 +121,7 @@ let books = [
 		Price: 30000,
 		Format: 'ebook',
 		Isbn: '9780618640157',
-		Descrition: 'A sweeping epic that follows Frodo Baggins and his companions on a perilous quest to destroy the One Ring and defeat the dark lord Sauron.',
+		Description: 'A sweeping epic that follows Frodo Baggins and his companions on a perilous quest to destroy the One Ring and defeat the dark lord Sauron.',
 		Status: 'New',
 		Location: 'Sena Comercio y Turismo',
 		Publicatio_day: 'October 20, 1955',
@@ -352,15 +352,16 @@ let books = [
 	}
 ];
 if ((actuallMonth === month1 || actuallMonth === month2) && (actuallDay === day1 || actuallDay === day2)) {
-    for (let i = 0; i < books.length; i++) {
-        let descuento = books[i].Price*0.1;
-        books[i].Price = books[i].Price - descuento;
-    }
-}else{
-    console.log("not is the day of book, normal prices");
+	for (let i = 0; i < books.length; i++) {
+		let descuento = books[i].Price * 0.1;
+		books[i].Price = books[i].Price - descuento;
+	}
+} else {
+	console.log("not is the day of book, normal prices");
 }
+
 function Normalbooks() {
-	bookContainer.innerHTML= ""
+	bookContainer.innerHTML = ""
 	const container = document.getElementById("bookContainer");
 	books.forEach((book) => {
 		const section = document.createElement("section");
@@ -376,6 +377,10 @@ function Normalbooks() {
 		img.src = `assets/books/${getImageName(book.Title)}.jpg`;
 		img.alt = book.Title;
 		div.appendChild(img);
+
+		const Description = document.createElement("p");
+		Description.textContent = `Description: ${book.Description}`;
+		div.appendChild(Description);
 
 		const price = document.createElement("p");
 		price.textContent = `$${book.Price}`;
@@ -393,9 +398,33 @@ function Normalbooks() {
 		editorial.textContent = `Editorial: ${book.Editorial}`;
 		div.appendChild(editorial);
 
+		const Language = document.createElement("p");
+		Language.textContent = `Language: ${book.Language}`;
+		div.appendChild(Language);
+
+		const Location = document.createElement("p");
+		Location.textContent = `Location: ${book.Location}`;
+		div.appendChild(Location);
+
+		const Publicatio_day = document.createElement("p");
+		Publicatio_day.textContent = `Publication Day: ${book.Publication_day}`;
+		div.appendChild(Publicatio_day);
+
 		const pages = document.createElement("p");
 		pages.textContent = `Pages: ${book.Pages}`;
 		div.appendChild(pages);
+
+		const format = document.createElement("p");
+		format.textContent = `Format: ${book.Format}`;
+		div.appendChild(format);
+
+		const Isbn = document.createElement("p");
+		Isbn.textContent = `Isbn: ${book.Isbn}`;
+		div.appendChild(Isbn);
+
+		const Status = document.createElement("p");
+		Status.textContent = `Status: ${book.Status}`;
+		div.appendChild(Status)
 
 		const stock = document.createElement("p");
 		stock.textContent = `Stock: ${book.Stock}`;
@@ -429,7 +458,7 @@ function getImageName(title) {
 
 //// filter Price//
 function pressPrices30_80() {
-	bookContainer.innerHTML= ""
+	bookContainer.innerHTML = ""
 	filter = books.filter(books => books.Price >= 30000 && books.Price <= 80000);
 	const container = document.getElementById("bookContainer");
 	filter.forEach((book) => {
@@ -455,6 +484,60 @@ function pressPrices30_80() {
 		author.textContent = `Author: ${book.Author}`;
 		div.appendChild(author);
 
+		const addToCartButton = document.createElement("a");
+		addToCartButton.href = "pages/sesion.html";
+		addToCartButton.innerHTML = `
+		<button>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<img src="assets/carro.png" alt="compra">
+		<p>Añadir al carrito</p>
+		</button>
+`;
+		div.appendChild(addToCartButton);
+
+		section.appendChild(div);
+		container.appendChild(section);
+	});
+}
+
+
+///filter for 5 most expensives books///
+
+function mostExpensive() {
+	bookContainer.innerHTML = ""
+	filter = books.sort((a, b) => b.Price - a.Price);
+	let top5Books = filter.slice(0, 5);
+	const container = document.getElementById("bookContainer");
+	top5Books.forEach((book) => {
+		const section = document.createElement("section");
+		section.classList.add("categorie-book");
+
+		const div = document.createElement("div");
+
+		const title = document.createElement("h2");
+		title.textContent = book.Title;
+		div.appendChild(title);
+
+		const img = document.createElement("img");
+		img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+		img.alt = book.Title;
+		div.appendChild(img);
+
+		const Description = document.createElement("p");
+		Description.textContent = `Description: ${book.Description}`;
+		div.appendChild(Description);
+
+		const price = document.createElement("p");
+		price.textContent = `$${book.Price}`;
+		div.appendChild(price);
+
+		const author = document.createElement("p");
+		author.textContent = `Author: ${book.Author}`;
+		div.appendChild(author);
+
 		const genre = document.createElement("p");
 		genre.textContent = `Genre: ${book.Gender}`;
 		div.appendChild(genre);
@@ -462,6 +545,18 @@ function pressPrices30_80() {
 		const editorial = document.createElement("p");
 		editorial.textContent = `Editorial: ${book.Editorial}`;
 		div.appendChild(editorial);
+
+		const Language = document.createElement("p");
+		Language.textContent = `Language: ${book.Language}`;
+		div.appendChild(Language);
+
+		const Location = document.createElement("p");
+		Location.textContent = `Location: ${book.Location}`;
+		div.appendChild(Location);
+
+		const Publicatio_day = document.createElement("p");
+		Publicatio_day.textContent = `Publication Day: ${book.Publication_day}`;
+		div.appendChild(Publicatio_day);
 
 		const pages = document.createElement("p");
 		pages.textContent = `Pages: ${book.Pages}`;
@@ -488,8 +583,8 @@ function pressPrices30_80() {
 		section.appendChild(div);
 		container.appendChild(section);
 	});
-
 }
+
 
 /////filter for books with more of 200 Pages////
 
@@ -519,22 +614,6 @@ function pressPages() {
 		const author = document.createElement("p");
 		author.textContent = `Author: ${book.Author}`;
 		div.appendChild(author);
-
-		const genre = document.createElement("p");
-		genre.textContent = `Genre: ${book.Gender}`;
-		div.appendChild(genre);
-
-		const editorial = document.createElement("p");
-		editorial.textContent = `Editorial: ${book.Editorial}`;
-		div.appendChild(editorial);
-
-		const pages = document.createElement("p");
-		pages.textContent = `Pages: ${book.Pages}`;
-		div.appendChild(pages);
-
-		const stock = document.createElement("p");
-		stock.textContent = `Stock: ${book.Stock}`;
-		div.appendChild(stock);
 
 		const addToCartButton = document.createElement("a");
 		addToCartButton.href = "pages/sesion.html";
@@ -608,6 +687,10 @@ function pressStock() {
 		img.alt = book.Title;
 		div.appendChild(img);
 
+		const Description = document.createElement("p");
+		Description.textContent = `Description: ${book.Description}`;
+		div.appendChild(Description);
+
 		const price = document.createElement("p");
 		price.textContent = `$${book.Price}`;
 		div.appendChild(price);
@@ -623,6 +706,18 @@ function pressStock() {
 		const editorial = document.createElement("p");
 		editorial.textContent = `Editorial: ${book.Editorial}`;
 		div.appendChild(editorial);
+
+		const Language = document.createElement("p");
+		Language.textContent = `Language: ${book.Language}`;
+		div.appendChild(Language);
+
+		const Location = document.createElement("p");
+		Location.textContent = `Location: ${book.Location}`;
+		div.appendChild(Location);
+
+		const Publicatio_day = document.createElement("p");
+		Publicatio_day.textContent = `Publication Day: ${book.Publication_day}`;
+		div.appendChild(Publicatio_day);
 
 		const pages = document.createElement("p");
 		pages.textContent = `Pages: ${book.Pages}`;
@@ -689,51 +784,67 @@ function pressAmount(operation, i) {
 }
 // Functions to search by Editorial-Language
 function pressLanguage() {
-	bookContainer.innerHTML= ""
+	bookContainer.innerHTML = ""
 	filter = books.sort((a, b) => a.Language.localeCompare(b.Language));
 	const container = document.getElementById("bookContainer");
 	filter.forEach((book) => {
-	const section = document.createElement("section");
-	section.classList.add("categorie-book");
+		const section = document.createElement("section");
+		section.classList.add("categorie-book");
 
-	const div = document.createElement("div");
+		const div = document.createElement("div");
 
-	const title = document.createElement("h2");
-	title.textContent = book.Title;
-	div.appendChild(title);
+		const title = document.createElement("h2");
+		title.textContent = book.Title;
+		div.appendChild(title);
 
-	const img = document.createElement("img");
-	img.src = `assets/books/${getImageName(book.Title)}.jpg`;
-	img.alt = book.Title;
-	div.appendChild(img);
+		const img = document.createElement("img");
+		img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+		img.alt = book.Title;
+		div.appendChild(img);
 
-	const price = document.createElement("p");
-	price.textContent = `$${book.Price}`;
-	div.appendChild(price);
+		const Description = document.createElement("p");
+		Description.textContent = `Description: ${book.Description}`;
+		div.appendChild(Description);
 
-	const author = document.createElement("p");
-	author.textContent = `Author: ${book.Author}`;
-	div.appendChild(author);
+		const price = document.createElement("p");
+		price.textContent = `$${book.Price}`;
+		div.appendChild(price);
 
-	const genre = document.createElement("p");
-	genre.textContent = `Genre: ${book.Gender}`;
-	div.appendChild(genre);
+		const author = document.createElement("p");
+		author.textContent = `Author: ${book.Author}`;
+		div.appendChild(author);
 
-	const editorial = document.createElement("p");
-	editorial.textContent = `Editorial: ${book.Editorial}`;
-	div.appendChild(editorial);
+		const genre = document.createElement("p");
+		genre.textContent = `Genre: ${book.Gender}`;
+		div.appendChild(genre);
 
-	const pages = document.createElement("p");
-	pages.textContent = `Pages: ${book.Pages}`;
-	div.appendChild(pages);
+		const editorial = document.createElement("p");
+		editorial.textContent = `Editorial: ${book.Editorial}`;
+		div.appendChild(editorial);
 
-	const stock = document.createElement("p");
-	stock.textContent = `Stock: ${book.Stock}`;
-	div.appendChild(stock);
+		const Language = document.createElement("p");
+		Language.textContent = `Language: ${book.Language}`;
+		div.appendChild(Language);
 
-	const addToCartButton = document.createElement("a");
-	addToCartButton.href = "pages/sesion.html";
-	addToCartButton.innerHTML = `
+		const Location = document.createElement("p");
+		Location.textContent = `Location: ${book.Location}`;
+		div.appendChild(Location);
+
+		const Publicatio_day = document.createElement("p");
+		Publicatio_day.textContent = `Publication Day: ${book.Publication_day}`;
+		div.appendChild(Publicatio_day);
+
+		const pages = document.createElement("p");
+		pages.textContent = `Pages: ${book.Pages}`;
+		div.appendChild(pages);
+
+		const stock = document.createElement("p");
+		stock.textContent = `Stock: ${book.Stock}`;
+		div.appendChild(stock);
+
+		const addToCartButton = document.createElement("a");
+		addToCartButton.href = "pages/sesion.html";
+		addToCartButton.innerHTML = `
 	<button>
 	<span></span>
 	<span></span>
@@ -743,58 +854,74 @@ function pressLanguage() {
 	<p>Añadir al carrito</p>
 	</button>
 `;
-	div.appendChild(addToCartButton);
+		div.appendChild(addToCartButton);
 
-	section.appendChild(div);
-	container.appendChild(section);
-});
+		section.appendChild(div);
+		container.appendChild(section);
+	});
 }
 function pressEditorial() {
 	bookContainer.innerHTML = ""
 	filter = books.sort((a, b) => a.Editorial.localeCompare(b.Editorial));
 	const container = document.getElementById("bookContainer");
 	filter.forEach((book) => {
-	const section = document.createElement("section");
-	section.classList.add("categorie-book");
+		const section = document.createElement("section");
+		section.classList.add("categorie-book");
 
-	const div = document.createElement("div");
+		const div = document.createElement("div");
 
-	const title = document.createElement("h2");
-	title.textContent = book.Title;
-	div.appendChild(title);
+		const title = document.createElement("h2");
+		title.textContent = book.Title;
+		div.appendChild(title);
 
-	const img = document.createElement("img");
-	img.src = `assets/books/${getImageName(book.Title)}.jpg`;
-	img.alt = book.Title;
-	div.appendChild(img);
+		const img = document.createElement("img");
+		img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+		img.alt = book.Title;
+		div.appendChild(img);
 
-	const price = document.createElement("p");
-	price.textContent = `$${book.Price}`;
-	div.appendChild(price);
+		const Description = document.createElement("p");
+		Description.textContent = `Description: ${book.Description}`;
+		div.appendChild(Description);
 
-	const author = document.createElement("p");
-	author.textContent = `Author: ${book.Author}`;
-	div.appendChild(author);
+		const price = document.createElement("p");
+		price.textContent = `$${book.Price}`;
+		div.appendChild(price);
 
-	const genre = document.createElement("p");
-	genre.textContent = `Genre: ${book.Gender}`;
-	div.appendChild(genre);
+		const author = document.createElement("p");
+		author.textContent = `Author: ${book.Author}`;
+		div.appendChild(author);
 
-	const editorial = document.createElement("p");
-	editorial.textContent = `Editorial: ${book.Editorial}`;
-	div.appendChild(editorial);
+		const genre = document.createElement("p");
+		genre.textContent = `Genre: ${book.Gender}`;
+		div.appendChild(genre);
 
-	const pages = document.createElement("p");
-	pages.textContent = `Pages: ${book.Pages}`;
-	div.appendChild(pages);
+		const editorial = document.createElement("p");
+		editorial.textContent = `Editorial: ${book.Editorial}`;
+		div.appendChild(editorial);
 
-	const stock = document.createElement("p");
-	stock.textContent = `Stock: ${book.Stock}`;
-	div.appendChild(stock);
+		const Language = document.createElement("p");
+		Language.textContent = `Language: ${book.Language}`;
+		div.appendChild(Language);
 
-	const addToCartButton = document.createElement("a");
-	addToCartButton.href = "pages/sesion.html";
-	addToCartButton.innerHTML = `
+		const Location = document.createElement("p");
+		Location.textContent = `Location: ${book.Location}`;
+		div.appendChild(Location);
+
+		const Publicatio_day = document.createElement("p");
+		Publicatio_day.textContent = `Publication Day: ${book.Publication_day}`;
+		div.appendChild(Publicatio_day);
+
+		const pages = document.createElement("p");
+		pages.textContent = `Pages: ${book.Pages}`;
+		div.appendChild(pages);
+
+		const stock = document.createElement("p");
+		stock.textContent = `Stock: ${book.Stock}`;
+		div.appendChild(stock);
+
+		const addToCartButton = document.createElement("a");
+		addToCartButton.href = "pages/sesion.html";
+		addToCartButton.innerHTML = `
 	<button>
 	<span></span>
 	<span></span>
@@ -804,60 +931,76 @@ function pressEditorial() {
 	<p>Añadir al carrito</p>
 	</button>
 `;
-	div.appendChild(addToCartButton);
+		div.appendChild(addToCartButton);
 
-	section.appendChild(div);
-	container.appendChild(section);
-});
+		section.appendChild(div);
+		container.appendChild(section);
+	});
 }
 // Search by Gender
 function pressGender(GenderOptions) {
 	bookContainer.innerHTML = ""
 	filter = books.filter((a) => a.Gender === GenderOptions);
 	if (filter.length === 0) {
-			const container = document.getElementById("bookContainer");
-			container.innerHTML = "NOT BOOKS FOUND";
+		const container = document.getElementById("bookContainer");
+		container.innerHTML = "NOT BOOKS FOUND";
 	} else {
 		const container = document.getElementById("bookContainer");
 		filter.forEach((book) => {
 			const section = document.createElement("section");
 			section.classList.add("categorie-book");
-	
+
 			const div = document.createElement("div");
-	
+
 			const title = document.createElement("h2");
 			title.textContent = book.Title;
 			div.appendChild(title);
-	
+
 			const img = document.createElement("img");
 			img.src = `assets/books/${getImageName(book.Title)}.jpg`;
 			img.alt = book.Title;
 			div.appendChild(img);
-	
+
+			const Description = document.createElement("p");
+			Description.textContent = `Description: ${book.Description}`;
+			div.appendChild(Description);
+
 			const price = document.createElement("p");
 			price.textContent = `$${book.Price}`;
 			div.appendChild(price);
-	
+
 			const author = document.createElement("p");
 			author.textContent = `Author: ${book.Author}`;
 			div.appendChild(author);
-	
+
 			const genre = document.createElement("p");
 			genre.textContent = `Genre: ${book.Gender}`;
 			div.appendChild(genre);
-	
+
 			const editorial = document.createElement("p");
 			editorial.textContent = `Editorial: ${book.Editorial}`;
 			div.appendChild(editorial);
-	
+
+			const Language = document.createElement("p");
+			Language.textContent = `Language: ${book.Language}`;
+			div.appendChild(Language);
+
+			const Location = document.createElement("p");
+			Location.textContent = `Location: ${book.Location}`;
+			div.appendChild(Location);
+
+			const Publicatio_day = document.createElement("p");
+			Publicatio_day.textContent = `Publication Day: ${book.Publication_day}`;
+			div.appendChild(Publicatio_day);
+
 			const pages = document.createElement("p");
 			pages.textContent = `Pages: ${book.Pages}`;
 			div.appendChild(pages);
-	
+
 			const stock = document.createElement("p");
 			stock.textContent = `Stock: ${book.Stock}`;
 			div.appendChild(stock);
-	
+
 			const addToCartButton = document.createElement("a");
 			addToCartButton.href = "pages/sesion.html";
 			addToCartButton.innerHTML = `
@@ -871,7 +1014,7 @@ function pressGender(GenderOptions) {
 			</button>
 	`;
 			div.appendChild(addToCartButton);
-	
+
 			section.appendChild(div);
 			container.appendChild(section);
 		});
@@ -880,7 +1023,7 @@ function pressGender(GenderOptions) {
 }
 // Search by Author
 function pressAuthor() {
-	bookContainer.innerHTML= ""
+	bookContainer.innerHTML = ""
 	filter = books.sort((a, b) => a.Author.localeCompare(b.Author));
 	const container = document.getElementById("bookContainer");
 	filter.forEach((book) => {
@@ -898,6 +1041,10 @@ function pressAuthor() {
 		img.alt = book.Title;
 		div.appendChild(img);
 
+		const Description = document.createElement("p");
+		Description.textContent = `Description: ${book.Description}`;
+		div.appendChild(Description);
+
 		const price = document.createElement("p");
 		price.textContent = `$${book.Price}`;
 		div.appendChild(price);
@@ -913,6 +1060,18 @@ function pressAuthor() {
 		const editorial = document.createElement("p");
 		editorial.textContent = `Editorial: ${book.Editorial}`;
 		div.appendChild(editorial);
+
+		const Language = document.createElement("p");
+		Language.textContent = `Language: ${book.Language}`;
+		div.appendChild(Language);
+
+		const Location = document.createElement("p");
+		Location.textContent = `Location: ${book.Location}`;
+		div.appendChild(Location);
+
+		const Publicatio_day = document.createElement("p");
+		Publicatio_day.textContent = `Publication Day: ${book.Publication_day}`;
+		div.appendChild(Publicatio_day);
 
 		const pages = document.createElement("p");
 		pages.textContent = `Pages: ${book.Pages}`;
@@ -942,7 +1101,7 @@ function pressAuthor() {
 }
 // Search by Price
 function PressPrice() {
-	bookContainer.innerHTML= ""
+	bookContainer.innerHTML = ""
 	filter = books.sort((a, b) => a.Price - b.Price);
 	const container = document.getElementById("bookContainer");
 	filter.forEach((book) => {
@@ -960,6 +1119,10 @@ function PressPrice() {
 		img.alt = book.Title;
 		div.appendChild(img);
 
+		const Description = document.createElement("p");
+		Description.textContent = `Description: ${book.Description}`;
+		div.appendChild(Description);
+
 		const price = document.createElement("p");
 		price.textContent = `$${book.Price}`;
 		div.appendChild(price);
@@ -975,6 +1138,18 @@ function PressPrice() {
 		const editorial = document.createElement("p");
 		editorial.textContent = `Editorial: ${book.Editorial}`;
 		div.appendChild(editorial);
+
+		const Language = document.createElement("p");
+		Language.textContent = `Language: ${book.Language}`;
+		div.appendChild(Language);
+
+		const Location = document.createElement("p");
+		Location.textContent = `Location: ${book.Location}`;
+		div.appendChild(Location);
+
+		const Publicatio_day = document.createElement("p");
+		Publicatio_day.textContent = `Publication Day: ${book.Publication_day}`;
+		div.appendChild(Publicatio_day);
 
 		const pages = document.createElement("p");
 		pages.textContent = `Pages: ${book.Pages}`;
@@ -1008,47 +1183,63 @@ function filterTitlesAZ() {
 	filter = books.sort((a, b) => a.Title.localeCompare(b.Title));
 	const container = document.getElementById("bookContainer");
 	filter.forEach((book) => {
-	const section = document.createElement("section");
-	section.classList.add("categorie-book");
+		const section = document.createElement("section");
+		section.classList.add("categorie-book");
 
-	const div = document.createElement("div");
+		const div = document.createElement("div");
 
-	const title = document.createElement("h2");
-	title.textContent = book.Title;
-	div.appendChild(title);
+		const title = document.createElement("h2");
+		title.textContent = book.Title;
+		div.appendChild(title);
 
-	const img = document.createElement("img");
-	img.src = `assets/books/${getImageName(book.Title)}.jpg`;
-	img.alt = book.Title;
-	div.appendChild(img);
+		const img = document.createElement("img");
+		img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+		img.alt = book.Title;
+		div.appendChild(img);
 
-	const price = document.createElement("p");
-	price.textContent = `$${book.Price}`;
-	div.appendChild(price);
+		const Description = document.createElement("p");
+		Description.textContent = `Description: ${book.Description}`;
+		div.appendChild(Description);
 
-	const author = document.createElement("p");
-	author.textContent = `Author: ${book.Author}`;
-	div.appendChild(author);
+		const price = document.createElement("p");
+		price.textContent = `$${book.Price}`;
+		div.appendChild(price);
 
-	const genre = document.createElement("p");
-	genre.textContent = `Genre: ${book.Gender}`;
-	div.appendChild(genre);
+		const author = document.createElement("p");
+		author.textContent = `Author: ${book.Author}`;
+		div.appendChild(author);
 
-	const editorial = document.createElement("p");
-	editorial.textContent = `Editorial: ${book.Editorial}`;
-	div.appendChild(editorial);
+		const genre = document.createElement("p");
+		genre.textContent = `Genre: ${book.Gender}`;
+		div.appendChild(genre);
 
-	const pages = document.createElement("p");
-	pages.textContent = `Pages: ${book.Pages}`;
-	div.appendChild(pages);
+		const editorial = document.createElement("p");
+		editorial.textContent = `Editorial: ${book.Editorial}`;
+		div.appendChild(editorial);
 
-	const stock = document.createElement("p");
-	stock.textContent = `Stock: ${book.Stock}`;
-	div.appendChild(stock);
+		const Language = document.createElement("p");
+		Language.textContent = `Language: ${book.Language}`;
+		div.appendChild(Language);
 
-	const addToCartButton = document.createElement("a");
-	addToCartButton.href = "pages/sesion.html";
-	addToCartButton.innerHTML = `
+		const Location = document.createElement("p");
+		Location.textContent = `Location: ${book.Location}`;
+		div.appendChild(Location);
+
+		const Publicatio_day = document.createElement("p");
+		Publicatio_day.textContent = `Publication Day: ${book.Publication_day}`;
+		div.appendChild(Publicatio_day);
+
+		const pages = document.createElement("p");
+		pages.textContent = `Pages: ${book.Pages}`;
+		div.appendChild(pages);
+
+		const stock = document.createElement("p");
+		stock.textContent = `Stock: ${book.Stock}`;
+		div.appendChild(stock);
+
+		const addToCartButton = document.createElement("a");
+		addToCartButton.href = "pages/sesion.html";
+		addToCartButton.innerHTML = `
 	<button>
 	<span></span>
 	<span></span>
@@ -1058,58 +1249,74 @@ function filterTitlesAZ() {
 	<p>Añadir al carrito</p>
 	</button>
 `;
-	div.appendChild(addToCartButton);
+		div.appendChild(addToCartButton);
 
-	section.appendChild(div);
-	container.appendChild(section);
-});
+		section.appendChild(div);
+		container.appendChild(section);
+	});
 }
 function filterTitlesZA() {
 	bookContainer.innerHTML = ""
 	filter = books.sort((a, b) => b.Title.localeCompare(a.Title));
 	const container = document.getElementById("bookContainer");
 	filter.forEach((book) => {
-	const section = document.createElement("section");
-	section.classList.add("categorie-book");
+		const section = document.createElement("section");
+		section.classList.add("categorie-book");
 
-	const div = document.createElement("div");
+		const div = document.createElement("div");
 
-	const title = document.createElement("h2");
-	title.textContent = book.Title;
-	div.appendChild(title);
+		const title = document.createElement("h2");
+		title.textContent = book.Title;
+		div.appendChild(title);
 
-	const img = document.createElement("img");
-	img.src = `assets/books/${getImageName(book.Title)}.jpg`;
-	img.alt = book.Title;
-	div.appendChild(img);
+		const img = document.createElement("img");
+		img.src = `assets/books/${getImageName(book.Title)}.jpg`;
+		img.alt = book.Title;
+		div.appendChild(img);
 
-	const price = document.createElement("p");
-	price.textContent = `$${book.Price}`;
-	div.appendChild(price);
+		const Description = document.createElement("p");
+		Description.textContent = `Description: ${book.Description}`;
+		div.appendChild(Description);
 
-	const author = document.createElement("p");
-	author.textContent = `Author: ${book.Author}`;
-	div.appendChild(author);
+		const price = document.createElement("p");
+		price.textContent = `$${book.Price}`;
+		div.appendChild(price);
 
-	const genre = document.createElement("p");
-	genre.textContent = `Genre: ${book.Gender}`;
-	div.appendChild(genre);
+		const author = document.createElement("p");
+		author.textContent = `Author: ${book.Author}`;
+		div.appendChild(author);
 
-	const editorial = document.createElement("p");
-	editorial.textContent = `Editorial: ${book.Editorial}`;
-	div.appendChild(editorial);
+		const genre = document.createElement("p");
+		genre.textContent = `Genre: ${book.Gender}`;
+		div.appendChild(genre);
 
-	const pages = document.createElement("p");
-	pages.textContent = `Pages: ${book.Pages}`;
-	div.appendChild(pages);
+		const editorial = document.createElement("p");
+		editorial.textContent = `Editorial: ${book.Editorial}`;
+		div.appendChild(editorial);
 
-	const stock = document.createElement("p");
-	stock.textContent = `Stock: ${book.Stock}`;
-	div.appendChild(stock);
+		const Language = document.createElement("p");
+		Language.textContent = `Language: ${book.Language}`;
+		div.appendChild(Language);
 
-	const addToCartButton = document.createElement("a");
-	addToCartButton.href = "pages/sesion.html";
-	addToCartButton.innerHTML = `
+		const Location = document.createElement("p");
+		Location.textContent = `Location: ${book.Location}`;
+		div.appendChild(Location);
+
+		const Publicatio_day = document.createElement("p");
+		Publicatio_day.textContent = `Publication Day: ${book.Publication_day}`;
+		div.appendChild(Publicatio_day);
+
+		const pages = document.createElement("p");
+		pages.textContent = `Pages: ${book.Pages}`;
+		div.appendChild(pages);
+
+		const stock = document.createElement("p");
+		stock.textContent = `Stock: ${book.Stock}`;
+		div.appendChild(stock);
+
+		const addToCartButton = document.createElement("a");
+		addToCartButton.href = "pages/sesion.html";
+		addToCartButton.innerHTML = `
 	<button>
 	<span></span>
 	<span></span>
@@ -1119,9 +1326,9 @@ function filterTitlesZA() {
 	<p>Añadir al carrito</p>
 	</button>
 `;
-	div.appendChild(addToCartButton);
+		div.appendChild(addToCartButton);
 
-	section.appendChild(div);
-	container.appendChild(section);
-});
+		section.appendChild(div);
+		container.appendChild(section);
+	});
 }
