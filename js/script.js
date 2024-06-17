@@ -532,7 +532,7 @@ function showBookCatalogue(books) {
 		const div = document.createElement("div");
 
 		const title = document.createElement("h2");
-		title.textContent = book.Title, newBook.Title;
+		title.textContent = book.Title;
 		div.appendChild(title);
 
 		const deleta = document.createElement("p");
@@ -620,6 +620,7 @@ function showBookCatalogue(books) {
 		container.appendChild(section);
 	});
 }
+
 function deleteBook(bookElement) {
 	const bookIndex = books.findIndex((book) => book.Title === bookElement.querySelector('h2').textContent);
 
@@ -832,7 +833,7 @@ function login() {
 		alert('Algo salio mal, intenta de Nuevo');
 	} else {
 		alert('login exitoso');
-		console.log(email, password);
+		console.log(' E-amil: '+email, '\n Contraseña: '+password);
 	}
 
 }
@@ -848,7 +849,7 @@ function register() {
 		alert('Algo salió mal, intenta de nuevo');
 	} else {
 		alert('Registro exitoso');
-		console.log(cc, email, cellphone, name, password);
+		console.log(' C.C: '+cc, '\n E-mail: '+email, '\n Telefono: '+cellphone, '\n Nombre: '+name, '\n Contraseña: '+password);
 	}
 }
 
