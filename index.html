@@ -14,13 +14,20 @@
 			<img src="assets/logoSena.png" alt="Logo sena" id="logo_sena">
 				<div id="search_head">
 					<h1 id="h1_head">Buscar Libros</h1>
-						<input type="text" id="input_head" placeholder="🔎Buscar...">
+						<div>
+							<input type="text" id="input_head" placeholder="🔎Buscar...">
+							<button onclick="searchButton()" id="searchButton">
+								<img src="assets/magnifying-glass.png" alt="Search">
+							</button>
+						</div>
+						
 				</div>
 		</section>
 			<section class="nav_sect">
 				<nav id="nav_id">
 					<a class="nav-link" href="#start">Inicio</a>
 					<a class="nav-link" href="#categories">Libros</a>
+					<button onclick="addBook()">Añadir Libro</button>
 				</nav>
 	</header>
 	<main>
