@@ -1,0 +1,5 @@
+Johan David Villanueva Gallego --- Leader- FrontEnd
+Nicolas Giraldo Ladino --- Member- FrontEnd
+Kevin Julian Alvarez Ramirez --- Member- BackEnd
+Miguel Angel Londoño Marulanda --- Member- BackEnd
+
