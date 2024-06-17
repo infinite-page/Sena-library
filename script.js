@@ -406,6 +406,28 @@ console.log(pressPages())
 
 
 
+//////////Login/////////
+
+
+function login(){
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+  let email = document.getElementById('email').value
+  let password = document.getElementById('password').value
+
+  if (email !== null && password !== null) {
+    alert('login exitoso');
+  
+  } else {
+    alert('Algo salio mal, intenta de Nuevo');
+  }
+  
+  })
+  }
+   
+
+
 
 ////register////
 
@@ -417,8 +439,9 @@ let cc = document.getElementById('cc').value
 let email = document.getElementById('email').value
 let cellphone = document.getElementById('cellphone').value
 let name = document.getElementById('name').value
+let password= document.getElementById('password').value
 
-if ( name !== null && cc !== null && email !== null && cellphone !== null) {
+if ( name !== null && cc !== null && email !== null && cellphone !== null && password !== password) {
   alert('Registro exitoso');
 
 } else {
