@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="assets/Favicon/library-icon-png-20.png" type="image/x-icon" class="fav">
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="stylesheet" href="style/FontAwesome/fontawesome-free-6.5.2-web/css/all.css">
 	<title>Sena Library</title>
@@ -29,9 +30,9 @@
 			<div>
 				<h1 id="h1_section1">LIBRERÍA DEL SENA</h1>
 			</div>
-				<div>
-					<p id="p_section1">Explora nuestra extensa colección de libros de todos los géneros, desde clásicos atemporales hasta los últimos éxitos.</p>
-				</div>
+			<div>
+				<p id="p_section1">Explora nuestra extensa colección de libros de todos los géneros, desde clásicos atemporales hasta los últimos éxitos.</p>
+			</div>
 				<a href="pages/sesion.html">
 					<button id="btn_section1">
 						<span></span>
@@ -51,502 +52,103 @@
 						<h1>Categorias</h1>
 					</div>
 						<section>
-							<button>
-								<img src="assets/az.png" alt="A-Z">
+						<button onclick="filterTitlesAZ()">
+							<img src="assets/az.png" alt="A-Z" >
+						</button>
+							<button onclick="filterTitlesZA()">
+								<img src="assets/za.png" alt="Z-A">
 							</button>
-								<button>
-									<img src="assets/za.png" alt="Z-A">
-								</button>
-									<button class="c-word-description"><h1>Disponibilidad</h1></button>
-									<button class="c-word-description"><h1>Idioma</h1></button>
-									<button class="c-word-description"><h1>Editorial</h1></button>
-									<button class="c-word-description"><h1>Título</h1></button>
-									<button class="c-word-description"><h1>Autor</h1></button>
-									<button class="c-word-description"><h1>Precio</h1></button>
-										<button>
-											<h1>Más costosos</h1>
+								<button class="c-word-description" onclick="Normalbooks()"><h1>All</h1></button>
+								<button class="c-word-description" onclick="pressStock()"><h1>Disponibilidad</h1></button>
+								<button class="c-word-description" onclick="pressLanguage()"><h1>Idioma</h1></button>
+								<button class="c-word-description" onclick="pressEditorial()"><h1>Editorial</h1></button>
+								<button class="c-word-description" onclick="pressAuthor()"><h1>Autor</h1></button>
+								<button class="c-word-description" onclick="PressPrice()"><h1>Precio</h1></button>
+									<button onclick="pressPrices30_80()"><h1>$30k-$80k</h1></button>
+										<button onclick="mostExpensive()">
+											<h1>Más caros</h1>
 											<img src="assets/dolar.png" alt="Price">
 										</button>
-												<button>
-													<h1>Más de 200 Paginas</h1>
-													<img src="assets/superior.png" alt="arriba de 200">
-												</button>
+											<button onclick="pressPages()">
+												<h1>Más de 200 Paginas</h1>
+												<img src="assets/superior.png" alt="arriba de 200">
+											</button>
 						</section>
 					
 				</div>
 					<div class="categories_words">
-						<button class="c-word">fiction</button>
-						<button class="c-word">magical realism</button>
-						<button class="c-word">historical</button>
-						<button class="c-word">mystery</button>
-						<button class="c-word">romance</button>
-						<button class="c-word">literature</button>
-						<button class="c-word">epic</button>
-						<button class="c-word">adventure</button>
-						<button class="c-word">tragedy</button>
-						<button class="c-word">fantasy</button>
+						<button class="c-word" onclick="pressGender('Fiction')">fiction</button>
+						<button class="c-word" onclick="pressGender('Magical Realism')">magical realism</button>
+						<button class="c-word" onclick="pressGender('Historical')">historical</button>
+						<button class="c-word" onclick="pressGender('Mystery')">mystery</button>
+						<button class="c-word" onclick="pressGender('Romance')">romance</button>
+						<button class="c-word" onclick="pressGender('Literature')">literature</button>
+						<button class="c-word" onclick="pressGender('Epic')">epic</button>
+						<button class="c-word" onclick="pressGender('Adventure')">adventure</button>
+						<button class="c-word" onclick="pressGender('Tragedy')">tragedy</button>
+						<button class="c-word" onclick="pressGender('Fantasy')">fantasy</button>
 					</div>
 			</section>
-			<section class="descriptions">
+			<section class="descriptions" id='bookContainer'>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/L_P.jpeg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/T_M.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/P_P.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Harry.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/G_G.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Hobbit.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Rings.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Alice.png" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/cien.png" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Alche.jpeg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/C_R.png" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Love.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Death.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Sound.jpeg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Cruz.jpeg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/house.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Pedro.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Memories.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-							<a href="pages/sesion.html">
-								<button>
-									<span></span>
-									<span></span>	
-									<span></span>
-									<span></span>
-									<img src="assets/carro.png" alt="compra">
-										<p>Añadir al carrito</p>
-								</button>
-							</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Hopscotch.jpeg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 				<section class="categorie-book">
-					<div>
-						<h2 id="resTittle"></h2>
-							<img src="assets/books/Aleph.jpg" alt="">
-								<p id="resPrice"></p>
-								<p id="resAutor"></p>
-								<p id="resGenre"></p>
-								<p id="resEditorial"></p>
-								<p id="resPages"></p>
-								<p id="resStock"></p>
-									<a href="pages/sesion.html">
-										<button>
-											<span></span>
-											<span></span>
-											<span></span>
-											<span></span>
-												<img src="assets/carro.png" alt="compra">
-													<p>Añadir al carrito</p>
-										</button>
-									</a>
-								
-					</div>
+					
 				</section>
 			</section>
 		</section>
@@ -561,6 +163,4 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="js/nav/scripts_nav.js"></script>
 			<script src="js/script.js"></script>
-				<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
 </html>
